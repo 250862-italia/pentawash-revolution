@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentawash Revolution 4.3 - Presentazione</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Lato:wght@400;700;900&family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #003366 0%, #4DA6FF 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            min-height: 80vh;
+            background: white;
+            border-radius: 20px;
+            margin: 20px 0;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #FF6600, #00CCCC, #4DA6FF);
+        }
+        
+        .slide-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .slide-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #4DA6FF;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .slide-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #F5F5F5, #E8F4FD);
+            border-left: 6px solid #FF6600;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .commission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .commission-card {
+            background: linear-gradient(135deg, #4DA6FF, #00CCCC);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(77, 166, 255, 0.3);
+        }
+        
+        .commission-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .commission-card .percentage {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .table th, .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #F5F5F5;
+        }
+        
+        .table th {
+            background: linear-gradient(135deg, #003366, #4DA6FF);
+            color: white;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        
+        .table tr:hover {
+            background: #F8F9FA;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .icon-item i {
+            font-size: 3rem;
+            color: #FF6600;
+            margin-bottom: 15px;
+        }
+        
+        .icon-item h4 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #FF6600, #FF8533);
+            color: white;
+            text-align: center;
+            padding: 60px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background: #003366;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #4DA6FF;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .pie-chart {
+            width: 300px;
+            height: 300px;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .pie-segment {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            clip: rect(0, 150px, 300px, 0);
+        }
+        
+        .segment-1 {
+            background: conic-gradient(#4DA6FF 0deg 100.8deg, transparent 100.8deg);
+        }
+        
+        .segment-2 {
+            background: conic-gradient(transparent 100.8deg, #00CCCC 100.8deg 136.8deg, transparent 136.8deg);
+        }
+        
+        .segment-3 {
+            background: conic-gradient(transparent 136.8deg, #FF6600 136.8deg 360deg);
+        }
+        
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 500;
+            color: #003366;
+            font-size: 1.2rem;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        
+        .color-1 { background: #4DA6FF; }
+        .color-2 { background: #00CCCC; }
+        .color-3 { background: #FF6600; }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+                margin: 10px 0;
+            }
+            
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .commission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- Slide 1 - Titolo -->
+        <div class="slide">
+            <h1 class="slide-title">Pentawash Revolution 4.3</h1>
+            <p class="slide-subtitle">Il piano di commissioni più innovativo e redditizio nel MLM</p>
+            <div class="slide-content">
+                <div class="highlight-box">
+                    <h3 style="text-align: center; color: #003366; margin-bottom: 20px;">🚀 La Nuova Era del Network Marketing</h3>
+                    <p style="text-align: center; font-size: 1.3rem;">
+                        Scopri come trasformare la tua rete in un business redditizio con il sistema di commissioni più avanzato mai creato
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 - Struttura Generale -->
+        <div class="slide">
+            <h1 class="slide-title">Struttura Generale</h1>
+            <p class="slide-subtitle">43% di Commissioni Totali</p>
+            
+            <div class="pie-chart">
+                <div class="pie-segment segment-1"></div>
+                <div class="pie-segment segment-2"></div>
+                <div class="pie-segment segment-3"></div>
+                <div class="chart-center">43%</div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color color-1"></div>
+                    <span>Core Commission - 28%</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-2"></div>
+                    <span>Step Up Bonus - 10%</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-3"></div>
+                    <span>Infinity Pool - 5%</span>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #003366; text-align: center;">💎 Sistema Trasparente e Semplice</h3>
+                <p style="text-align: center; font-size: 1.2rem;">
+                    Ogni percentuale è calcolata automaticamente e pagata in tempo reale
+                </p>
+            </div>
+        </div>
+        
+        <!-- Slide 3 - Core Commission -->
+        <div class="slide">
+            <h1 class="slide-title">Core Commission</h1>
+            <p class="slide-subtitle">28% di Guadagno Garantito</p>
+            
+            <div class="commission-grid">
+                <div class="commission-card">
+                    <h3>Vendite Personali</h3>
+                    <div class="percentage">23%</div>
+                    <p>Su ogni vendita diretta</p>
+                </div>
+                <div class="commission-card">
+                    <h3>Primo Livello</h3>
+                    <div class="percentage">5%</div>
+                    <p>Sulle vendite della tua squadra</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #003366;">💰 Guadagno Immediato e Tangibile</h3>
+                <ul style="margin-left: 20px; font-size: 1.1rem;">
+                    <li>Pagamenti settimanali</li>
+                    <li>Nessun requisito di volume</li>
+                    <li>Commissioni dal primo giorno</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Slide 4 - Step Up Bonus -->
+        <div class="slide">
+            <h1 class="slide-title">Step Up Bonus</h1>
+            <p class="slide-subtitle">10% di Bonus Progressivi</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Livello</th>
+                            <th>Volume Squadra/Mese</th>
+                            <th>Bonus Extra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Starter</strong></td>
+                            <td>0 - 500 €</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Builder</strong></td>
+                            <td>501 - 2.000 €</td>
+                            <td>+2%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leader</strong></td>
+                            <td>2.001 - 7.500 €</td>
+                            <td>+4%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mentor</strong></td>
+                            <td>7.501 - 20.000 €</td>
+                            <td>+6%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legend</strong></td>
+                            <td>20.001 €+</td>
+                            <td>+10%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #003366;">📈 Sistema di Crescita Progressiva</h3>
+                <p>Più cresce la tua squadra, più aumentano i tuoi guadagni. Un sistema che premia la leadership e la crescita sostenibile.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 5 - Infinity Pool -->
+        <div class="slide">
+            <h1 class="slide-title">Infinity Pool</h1>
+            <p class="slide-subtitle">5% del Fatturato Globale</p>
+            
+            <div class="slide-content">
+                <div class="highlight-box">
+                    <h3 style="color: #003366;">🌊 Condivisione Globale dei Profitti</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">Il 5% del fatturato globale viene condiviso tra gli ambassador che:</p>
+                    <ul style="margin-left: 20px; font-size: 1.1rem;">
+                        <li>✅ Hanno almeno 5 ambassador attivi</li>
+                        <li>✅ Generano 15.000 € di volume squadra/mese</li>
+                        <li>✅ Mantengono il livello per 2 mesi consecutivi</li>
+                    </ul>
+                </div>
+                
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <div style="font-size: 3rem; color: #4DA6FF;">👥</div>
+                        <h4>Team Attivo</h4>
+                        <p>5+ ambassador attivi</p>
+                    </div>
+                    <div class="icon-item">
+                        <div style="font-size: 3rem; color: #00CCCC;">📊</div>
+                        <h4>Volume Squadra</h4>
+                        <p>15.000 €/mese</p>
+                    </div>
+                    <div class="icon-item">
+                        <div style="font-size: 3rem; color: #FF6600;">⏰</div>
+                        <h4>Consistenza</h4>
+                        <p>2 mesi consecutivi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6 - Innovazioni Chiave -->
+        <div class="slide">
+            <h1 class="slide-title">Innovazioni Chiave</h1>
+            <p class="slide-subtitle">Bonus Esclusivi e Riconoscimenti</p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <div style="font-size: 3rem; color: #FF6600;">🚀</div>
+                    <h4>Fast Start Bonus</h4>
+                    <p>+10% sulle vendite dirette nei primi 60 giorni</p>
+                </div>
+                <div class="icon-item">
+                    <div style="font-size: 3rem; color: #4DA6FF;">🏆</div>
+                    <h4>Matching Bonus</h4>
+                    <p>+2% sulle commissioni dei diretti dal livello Leader</p>
+                </div>
+                <div class="icon-item">
+                    <div style="font-size: 3rem; color: #00CCCC;">👑</div>
+                    <h4>Legend Club</h4>
+                    <p>Accesso a eventi VIP e bonus extra oltre i 50.000 € di volume squadra</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #003366;">💎 Vantaggi Esclusivi</h3>
+                <p>Questi bonus rendono Pentawash Revolution 4.3 il sistema più generoso e motivante nel settore MLM.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 7 - Gamification -->
+        <div class="slide">
+            <h1 class="slide-title">Gamification</h1>
+            <p class="slide-subtitle">Divertimento e Motivazione</p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <div style="font-size: 3rem; color: #FF6600;">🎮</div>
+                    <h4>Pentagame Evoluto</h4>
+                    <p>Token e premi esclusivi per ogni obiettivo raggiunto</p>
+                </div>
+                <div class="icon-item">
+                    <div style="font-size: 3rem; color: #4DA6FF;">🏅</div>
+                    <h4>Classifiche Mensili</h4>
+                    <p>Riconoscimenti pubblici per i migliori performer</p>
+                </div>
+                <div class="icon-item">
+                    <div style="font-size: 3rem; color: #00CCCC;">🎯</div>
+                    <h4>Challenge Settimanali</h4>
+                    <p>Micro-incentivi per mantenere alta la motivazione della rete</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #003366;">🎉 La Differenza Pentawash</h3>
+                <p>Trasformiamo il lavoro di rete in un'esperienza coinvolgente e gratificante, dove ogni successo viene celebrato e premiato.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 8 - Simulazione Guadagni -->
+        <div class="slide">
+            <h1 class="slide-title">Simulazione Guadagni</h1>
+            <p class="slide-subtitle">Proiezioni Realistiche e Trasparenti</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Livello</th>
+                            <th>Guadagno Medio Mensile</th>
+                            <th>Caratteristiche</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Base</strong></td>
+                            <td>~92 €</td>
+                            <td>Vendite personali + primo livello</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Builder</strong></td>
+                            <td>~230 €</td>
+                            <td>+ Step Up Bonus 2%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mentor</strong></td>
+                            <td>~2.600 €</td>
+                            <td>+ Step Up Bonus 6% + Matching</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legend</strong></td>
+                            <td>~6.500 €+</td>
+                            <td>+ Step Up Bonus 10% + Infinity Pool</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #003366;">📈 Crescita Esponenziale</h3>
+                <p>I guadagni crescono in modo esponenziale con l'espansione della tua rete e il raggiungimento di livelli superiori.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 9 - Call to Action -->
+        <div class="slide">
+            <div class="cta-section">
+                <h2>Unisciti a Pentawash Revolution 4.3</h2>
+                <p>Trasforma il tuo impegno in un business reale e redditizio</p>
+                <a href="#" class="btn-primary">Inizia Ora</a>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h3 style="color: #003366; text-align: center;">🌟 Perché Scegliere Pentawash Revolution 4.3?</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #4DA6FF; margin-bottom: 10px;">💼</div>
+                        <h4>Business Reale</h4>
+                        <p>Non solo vendite, ma costruzione di un impero</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #00CCCC; margin-bottom: 10px;">🚀</div>
+                        <h4>Crescita Rapida</h4>
+                        <p>Sistema di bonus che accelera i guadagni</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #FF6600; margin-bottom: 10px;">🎯</div>
+                        <h4>Supporto Completo</h4>
+                        <p>Training, materiali e assistenza dedicata</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

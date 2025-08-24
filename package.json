@@ -1,0 +1,22 @@
+{
+  "name": "pentawash-revolution-presentation",
+  "version": "1.0.0",
+  "description": "Presentazione professionale Pentawash Revolution 4.3",
+  "main": "pentawash-commission-plan.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Build completato'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "pentawash",
+    "mlm",
+    "presentation",
+    "commission-plan"
+  ],
+  "author": "Pentawash Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
