@@ -644,6 +644,203 @@
             }
         }
         
+        /* Calcolatore Commissioni */
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .calculator-form {
+            background: linear-gradient(135deg, var(--light-gray), #E8F4FD);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--secondary-blue);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--energy-orange);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-calculate {
+            width: 100%;
+            background: linear-gradient(135deg, var(--energy-orange), var(--warning-yellow));
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+        }
+        
+        .btn-calculate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.5);
+        }
+        
+        .calculator-results {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .results-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .results-header h3 {
+            color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .results-header p {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, var(--light-gray), #E8F4FD);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .result-card.total-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--energy-orange), var(--warning-yellow));
+            color: white;
+            border-left-color: var(--primary-blue);
+        }
+        
+        .result-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .result-title {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .total-card .result-title {
+            color: white;
+        }
+        
+        .result-value {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 500;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--secondary-blue);
+        }
+        
+        .total-card .result-value {
+            color: white;
+            font-size: 2.2rem;
+        }
+        
+        .result-detail {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            line-height: 1.4;
+        }
+        
+        .total-card .result-detail {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .level-indicator {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .level-badge {
+            display: inline-block;
+            background: var(--energy-orange);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+        }
+        
+        .level-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Responsive per calcolatore */
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
@@ -927,7 +1124,101 @@
             </div>
         </div>
         
-        <!-- Slide 8 - Simulazione Guadagni Premium -->
+        <!-- Slide 8 - Calcolatore Commissioni Interattivo -->
+        <div class="slide">
+            <h1 class="slide-title">🧮 Calcolatore Commissioni</h1>
+            <p class="slide-subtitle">Calcola le tue potenziali commissioni con Pentawash Revolution 4.3</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="input-group">
+                        <label for="personalSales">Vendite Personali Mensili (€)</label>
+                        <input type="number" id="personalSales" value="5000" min="0" step="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="teamVolume">Volume Squadra Mensile (€)</label>
+                        <input type="number" id="teamVolume" value="5000" min="0" step="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="ambassadors">Numero Ambassador Attivi</label>
+                        <input type="number" id="ambassadors" value="5" min="0" max="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="stabilityMonths">Mesi di Stabilità</label>
+                        <input type="number" id="stabilityMonths" value="2" min="1" max="12">
+                    </div>
+                    
+                    <button class="btn-calculate" onclick="calculateCommissions()">
+                        🧮 Calcola Commissioni
+                    </button>
+                </div>
+                
+                <div class="calculator-results" id="calculatorResults">
+                    <div class="results-header">
+                        <h3>📊 Risultati Calcolo</h3>
+                        <p>Le tue commissioni mensili con Pentawash Revolution 4.3</p>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon">💰</div>
+                            <div class="result-title">Core Commission</div>
+                            <div class="result-value" id="coreCommission">€0</div>
+                            <div class="result-detail">Vendite personali + Primo livello</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-icon">📈</div>
+                            <div class="result-title">Step Up Bonus</div>
+                            <div class="result-value" id="stepUpBonus">€0</div>
+                            <div class="result-detail">Bonus per volume squadra</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-icon">🌊</div>
+                            <div class="result-title">Infinity Pool</div>
+                            <div class="result-value" id="infinityPool">€0</div>
+                            <div class="result-detail">Condivisione globale</div>
+                        </div>
+                        
+                        <div class="result-card total-card">
+                            <div class="result-icon">🎯</div>
+                            <div class="result-title">TOTALE MENSUALE</div>
+                            <div class="result-value total-value" id="totalMonthly">€0</div>
+                            <div class="result-detail">Guadagno totale garantito</div>
+                        </div>
+                    </div>
+                    
+                    <div class="level-indicator">
+                        <div class="level-badge" id="levelBadge">
+                            <span class="level-text">Starter</span>
+                        </div>
+                        <div class="level-description" id="levelDescription">
+                            Inizia qui e cresci con la tua squadra!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue);">💡 Come Funziona il Calcolo</h3>
+                <ul style="margin-left: 20px; font-size: 1.1rem;">
+                    <li><strong>Core Commission:</strong> 23% vendite personali + 5% primo livello squadra</li>
+                    <li><strong>Step Up Bonus:</strong> Bonus progressivi dal 2% al 10% in base al volume squadra</li>
+                    <li><strong>Infinity Pool:</strong> 5% del fatturato globale se hai 5+ ambassador e 15.000€ volume</li>
+                    <li><strong>Bonus Extra:</strong> Fast Start (+10%) e Matching (+2%) inclusi automaticamente</li>
+                </ul>
+            </div>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">🚀 PROVA IL CALCOLATORE: Scopri quanto puoi guadagnare realmente!</div>
+            </div>
+        </div>
+        
+        <!-- Slide 9 - Simulazione Guadagni Premium -->
         <div class="slide">
             <h1 class="slide-title">Simulazione Guadagni</h1>
             <p class="slide-subtitle">Proiezioni Realistiche e Trasparenti - I Numeri Parlano!</p>
@@ -954,6 +1245,12 @@
                             <td>~230 €</td>
                             <td>+ Step Up Bonus 2%</td>
                             <td>1-2 mesi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leader</strong></td>
+                            <td>~2.600 €</td>
+                            <td>+ Step Up Bonus 4% + Matching</td>
+                            <td>3-6 mesi</td>
                         </tr>
                         <tr>
                             <td><strong>Mentor</strong></td>
@@ -1062,12 +1359,95 @@
             });
             });
         
-        // Add fade-in class to elements
+        // Calcolatore Commissioni
+        function calculateCommissions() {
+            // Recupera i valori dagli input
+            const personalSales = parseFloat(document.getElementById('personalSales').value) || 0;
+            const teamVolume = parseFloat(document.getElementById('teamVolume').value) || 0;
+            const ambassadors = parseInt(document.getElementById('ambassadors').value) || 0;
+            const stabilityMonths = parseInt(document.getElementById('stabilityMonths').value) || 0;
+            
+            // Calcola Core Commission (23% vendite personali + 5% primo livello)
+            const coreCommission = (personalSales * 0.23) + (teamVolume * 0.05);
+            
+            // Calcola Step Up Bonus in base al volume squadra
+            let stepUpBonus = 0;
+            let level = 'Starter';
+            let levelDescription = 'Inizia qui e cresci con la tua squadra!';
+            
+            if (teamVolume >= 20001) {
+                stepUpBonus = teamVolume * 0.10;
+                level = 'Legend';
+                levelDescription = 'Livello massimo! Accesso a Infinity Pool e bonus VIP!';
+            } else if (teamVolume >= 7501) {
+                stepUpBonus = teamVolume * 0.06;
+                level = 'Mentor';
+                levelDescription = 'Leader esperto con bonus elevati e matching bonus!';
+            } else if (teamVolume >= 2001) {
+                stepUpBonus = teamVolume * 0.04;
+                level = 'Leader';
+                levelDescription = 'Leader emergente con bonus crescenti!';
+            } else if (teamVolume >= 501) {
+                stepUpBonus = teamVolume * 0.02;
+                level = 'Builder';
+                levelDescription = 'Costruttore di squadra con bonus iniziali!';
+            }
+            
+            // Calcola Infinity Pool (5% se requisiti soddisfatti)
+            let infinityPool = 0;
+            if (ambassadors >= 5 && teamVolume >= 15000 && stabilityMonths >= 2) {
+                // Simula 5% del fatturato globale (esempio: 100.000€)
+                infinityPool = 100000 * 0.05 / 100; // Distribuito tra tutti i qualificati
+            }
+            
+            // Calcola Fast Start Bonus (+10% sulle vendite personali per i primi 60 giorni)
+            const fastStartBonus = personalSales * 0.10;
+            
+            // Calcola Matching Bonus (+2% sulle commissioni dei diretti dal livello Leader)
+            const matchingBonus = (ambassadors >= 3) ? (teamVolume * 0.02) : 0;
+            
+            // Totale Step Up Bonus (include tutti i bonus)
+            const totalStepUpBonus = stepUpBonus + fastStartBonus + matchingBonus;
+            
+            // Totale mensile
+            const totalMonthly = coreCommission + totalStepUpBonus + infinityPool;
+            
+            // Aggiorna i risultati
+            document.getElementById('coreCommission').textContent = `€${coreCommission.toFixed(0)}`;
+            document.getElementById('stepUpBonus').textContent = `€${totalStepUpBonus.toFixed(0)}`;
+            document.getElementById('infinityPool').textContent = `€${infinityPool.toFixed(0)}`;
+            document.getElementById('totalMonthly').textContent = `€${totalMonthly.toFixed(0)}`;
+            
+            // Aggiorna livello e descrizione
+            document.getElementById('levelBadge').innerHTML = `<span class="level-text">${level}</span>`;
+            document.getElementById('levelDescription').textContent = levelDescription;
+            
+            // Aggiungi animazione ai risultati
+            const resultCards = document.querySelectorAll('.result-card');
+            resultCards.forEach((card, index) => {
+                card.style.animation = 'none';
+                setTimeout(() => {
+                    card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s both`;
+                }, 100);
+            });
+            
+            // Mostra i risultati con effetto
+            document.getElementById('calculatorResults').style.display = 'block';
+            document.getElementById('calculatorResults').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+        
+        // Calcola automaticamente al caricamento della pagina
         document.addEventListener('DOMContentLoaded', function() {
             const elements = document.querySelectorAll('.slide, .highlight-box, .commission-card, .icon-item');
             elements.forEach((element, index) => {
                 element.style.animationDelay = `${index * 0.2}s`;
             });
+            
+            // Calcola commissioni iniziali
+            setTimeout(calculateCommissions, 1000);
         });
     </script>
 </body>
