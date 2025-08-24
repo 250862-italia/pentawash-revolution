@@ -32,6 +32,10 @@
       "destination": "/pentawash-revolution-premium-en.html"
     }
   ],
+  "domains": [
+    "www.therevolution358.com",
+    "therevolution358.com"
+  ],
   "headers": [
     {
       "source": "/(.*)",
