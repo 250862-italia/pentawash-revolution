@@ -813,6 +813,175 @@
             color: var(--energy-orange);
         }
 
+        /* Tabella Livelli e Bonus Step Up */
+        .levels-table {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .levels-table h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .table-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+
+        .levels-table-content {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .levels-table-content th {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.2rem 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .levels-table-content th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        .levels-table-content th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        .levels-table-content td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .level-row:hover {
+            background: rgba(77, 166, 255, 0.05);
+            transform: scale(1.01);
+            transition: var(--transition-fast);
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--white);
+            min-width: 80px;
+        }
+
+        .level-badge.starter {
+            background: var(--light-gray);
+            color: var(--dark-text);
+        }
+
+        .level-badge.builder {
+            background: var(--gradient-secondary);
+        }
+
+        .level-badge.leader {
+            background: var(--gradient-energy);
+        }
+
+        .level-badge.mentor {
+            background: var(--gradient-primary);
+        }
+
+        .level-badge.legend {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: var(--dark-text);
+        }
+
+        .volume-range {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .bonus-percentage {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--success-green);
+        }
+
+        .level-description {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            opacity: 0.8;
+            max-width: 200px;
+        }
+
+        .table-info {
+            margin-top: 2rem;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .info-content p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .table-container {
+                padding: 1rem;
+                margin: 0 1rem;
+            }
+            
+            .levels-table-content th,
+            .levels-table-content td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .level-description {
+                max-width: 150px;
+            }
+            
+            .info-box {
+                flex-direction: column;
+                text-align: center;
+                margin: 0 1rem;
+            }
+        }
+
         /* Calculator Section Premium */
         .calculator {
             padding: 6rem 0;
@@ -1554,6 +1723,75 @@
                             <span class="component">Step Up Bonus</span>
                             <span class="operator">+</span>
                             <span class="component">Infinity Pool</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabella Livelli e Bonus Step Up -->
+            <div class="levels-table" data-aos="fade-up" data-aos-delay="500">
+                <h3>📈 Tabella Livelli e Bonus Step Up</h3>
+                <div class="table-container">
+                    <table class="levels-table-content">
+                        <thead>
+                            <tr>
+                                <th>Livello</th>
+                                <th>Volume Squadra/Mese</th>
+                                <th>Bonus Extra</th>
+                                <th>Descrizione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="level-row starter">
+                                <td class="level-name">
+                                    <div class="level-badge starter">Starter</div>
+                                </td>
+                                <td class="volume-range">0 – 500 €</td>
+                                <td class="bonus-percentage">0%</td>
+                                <td class="level-description">Inizia qui e costruisci la tua base</td>
+                            </tr>
+                            <tr class="level-row builder">
+                                <td class="level-name">
+                                    <div class="level-badge builder">Builder</div>
+                                </td>
+                                <td class="volume-range">501 – 2.000 €</td>
+                                <td class="bonus-percentage">+2%</td>
+                                <td class="level-description">Stai costruendo una squadra solida</td>
+                            </tr>
+                            <tr class="level-row leader">
+                                <td class="level-name">
+                                    <div class="level-badge leader">Leader</div>
+                                </td>
+                                <td class="volume-range">2.001 – 7.500 €</td>
+                                <td class="bonus-percentage">+4%</td>
+                                <td class="level-description">La tua squadra sta crescendo!</td>
+                            </tr>
+                            <tr class="level-row mentor">
+                                <td class="level-name">
+                                    <div class="level-badge mentor">Mentor</div>
+                                </td>
+                                <td class="volume-range">7.501 – 20.000 €</td>
+                                <td class="bonus-percentage">+6%</td>
+                                <td class="level-description">Sei un leader riconosciuto!</td>
+                            </tr>
+                            <tr class="level-row legend">
+                                <td class="level-name">
+                                    <div class="level-badge legend">Legend</div>
+                                </td>
+                                <td class="volume-range">20.001 €+</td>
+                                <td class="bonus-percentage">+10%</td>
+                                <td class="level-description">Livello Elite - Hai raggiunto la leggenda!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-info">
+                    <div class="info-box">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <h4>Come Funziona il Sistema Step Up</h4>
+                            <p>Il bonus Step Up si calcola sul volume squadra mensile. Più alta è la tua squadra, più alto è il tuo bonus extra. Questo sistema premia la crescita sostenibile e la leadership.</p>
                         </div>
                     </div>
                 </div>
