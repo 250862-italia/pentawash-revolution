@@ -6,14 +6,14 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/pentawash-commission-plan.html"
+      "source": "/",
+      "destination": "/pentawash-commission-plan.html"
     },
     {
-      "src": "/pentawash",
-      "dest": "/pentawash-revolution-4.3.html"
+      "source": "/pentawash",
+      "destination": "/pentawash-revolution-4.3.html"
     }
   ],
   "headers": [
