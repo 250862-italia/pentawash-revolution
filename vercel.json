@@ -21,7 +21,11 @@
     },
     {
       "source": "/commission-plan",
-      "destination": "/pentawash-commission-plan.html"
+      "destination": "/pentawash_commission_plan.html"
+    },
+    {
+      "source": "/premium",
+      "destination": "/pentawash-revolution-premium.html"
     }
   ],
   "headers": [
