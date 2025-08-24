@@ -1,0 +1,3128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Revolution 3.5.8 Elite - Premium Version</title>
+    
+    <!-- Google Fonts Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Palette Colori Premium */
+            --primary-blue: #003366;
+            --secondary-blue: #4DA6FF;
+            --accent-aqua: #00CCCC;
+            --energy-orange: #FF6600;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --dark-text: #1A1A1A;
+            --border-color: #E0E0E0;
+            --success-green: #00D4AA;
+            --warning-yellow: #FFB800;
+            --error-red: #FF4757;
+            
+            /* Gradients Premium */
+            --gradient-primary: linear-gradient(135deg, #003366 0%, #4DA6FF 100%);
+            --gradient-secondary: linear-gradient(135deg, #00CCCC 0%, #4DA6FF 100%);
+            --gradient-energy: linear-gradient(135deg, #FF6600 0%, #FFB800 100%);
+            --gradient-success: linear-gradient(135deg, #00D4AA 0%, #00CCCC 100%);
+            
+            /* Shadows Premium */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.16);
+            --shadow-glow: 0 0 32px rgba(77, 166, 255, 0.3);
+            
+            /* Transitions Premium */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: var(--light-gray);
+            overflow-x: hidden;
+        }
+
+        /* Header Premium con Animazioni */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+            background: rgba(77, 166, 255, 0.1);
+        }
+
+        /* Hero Section Premium */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .benefit-item i {
+            color: var(--energy-orange);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive per Mobile */
+        @media (max-width: 768px) {
+            .hero-benefits {
+                margin: 1.5rem 0;
+                gap: 0.8rem;
+            }
+
+            .benefit-item {
+                padding: 0.8rem 1rem;
+                background: rgba(255, 255, 255, 0.2);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .benefit-item i {
+                font-size: 1rem;
+            }
+
+            .benefit-item span {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-title {
+                margin-top: 2rem;
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .benefit-item span {
+                text-align: center;
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-primary {
+            background: var(--gradient-energy);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Animazioni Premium */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Scroll Indicator Premium */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--white);
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive Design Premium */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content {
+                padding: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        /* Container e Layout Premium */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--dark-text);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features Section Premium */
+        .features {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .feature-highlight {
+            background: var(--gradient-success);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* Sistema Perfetto Section Premium */
+        .perfect-system {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .system-explanation {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .explanation-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            color: var(--dark-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .fibonacci-note {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: var(--dark-text);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--shadow-md);
+        }
+
+        .fibonacci-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .fibonacci-note p {
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .explanation-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border-color);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explanation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-smooth);
+        }
+
+        .explanation-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .explanation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary-blue);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .card-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .card-content p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .card-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .card-content strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .system-conclusion {
+            text-align: center;
+        }
+
+        .conclusion-box {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .conclusion-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .conclusion-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .conclusion-box strong {
+            color: var(--accent-aqua);
+        }
+
+        @media (max-width: 768px) {
+            .explanation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .conclusion-box {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+        }
+
+        /* MLM System Section Premium */
+        .mlm-system {
+            padding: 6rem 0;
+            background: var(--light-gray);
+        }
+
+        .mlm-visualization {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .mlm-level {
+            text-align: center;
+        }
+
+        .level-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+            border: 2px solid transparent;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .level-card.primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: var(--energy-orange);
+        }
+
+        .level-card.secondary {
+            background: var(--white);
+            border: 2px solid var(--secondary-blue);
+        }
+
+        .level-card.accent {
+            background: var(--white);
+            border: 2px solid var(--accent-aqua);
+        }
+
+        .level-cards {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .level-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .level-card h3, .level-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .commission-rate {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--secondary-blue);
+            background: rgba(77, 166, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .level-card.primary .commission-rate {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mlm-connector {
+            text-align: center;
+        }
+
+        .connector-line {
+            width: 2px;
+            height: 40px;
+            background: var(--gradient-primary);
+            margin: 0 auto;
+        }
+
+        .connector-arrow {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-top: 0.5rem;
+        }
+
+        .mlm-formula {
+            text-align: center;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .mlm-formula h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .formula-container {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .formula-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .formula-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .formula-components {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .component {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            border: 2px solid var(--border-color);
+            transition: var(--transition-fast);
+        }
+
+        .component:hover {
+            border-color: var(--secondary-blue);
+            transform: scale(1.05);
+        }
+
+        .operator {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--energy-orange);
+        }
+
+        /* Tabella Livelli e Bonus Step Up */
+        .levels-table {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .levels-table h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .table-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+
+        .levels-table-content {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .levels-table-content th {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.2rem 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .levels-table-content th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        .levels-table-content th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        .levels-table-content td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .level-row:hover {
+            background: rgba(77, 166, 255, 0.05);
+            transform: scale(1.01);
+            transition: var(--transition-fast);
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--white);
+            min-width: 80px;
+        }
+
+        .level-badge.starter {
+            background: var(--light-gray);
+            color: var(--dark-text);
+        }
+
+        .level-badge.builder {
+            background: var(--gradient-secondary);
+        }
+
+        .level-badge.leader {
+            background: var(--gradient-energy);
+        }
+
+        .level-badge.mentor {
+            background: var(--gradient-primary);
+        }
+
+        .level-badge.legend {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: var(--dark-text);
+        }
+
+        .level-badge.iconic {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: var(--white);
+        }
+
+        .volume-range {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .bonus-percentage {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--success-green);
+        }
+
+        .level-description {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            opacity: 0.8;
+            max-width: 200px;
+        }
+
+        .table-info {
+            margin-top: 2rem;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .info-content p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .table-container {
+                padding: 1rem;
+                margin: 0 1rem;
+            }
+            
+            .levels-table-content th,
+            .levels-table-content td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .level-description {
+                max-width: 150px;
+            }
+            
+            .info-box {
+                flex-direction: column;
+                text-align: center;
+                margin: 0 1rem;
+            }
+        }
+
+        /* Infinity Pool Section Premium */
+        .infinity-pool {
+            padding: 6rem 0;
+            background: var(--light-gray);
+        }
+
+        .infinity-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .infinity-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .infinity-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .infinity-hero h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .infinity-description {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border-color);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-smooth);
+        }
+
+        .requirement-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-aqua);
+        }
+
+        .requirement-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirement-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .requirement-card p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirement-status {
+            background: var(--gradient-success);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .infinity-benefits {
+            margin-bottom: 4rem;
+        }
+
+        .infinity-benefits h3 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .infinity-calculation {
+            text-align: center;
+        }
+
+        .calculation-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculation-box h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .calculation-example p {
+            font-size: 1.1rem;
+            color: var(--dark-text);
+            margin-bottom: 2rem;
+        }
+
+        .calculation-steps {
+            display: grid;
+            gap: 1rem;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .calc-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-aqua);
+        }
+
+        .step-number {
+            background: var(--accent-aqua);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+
+        .calc-step.total {
+            background: var(--gradient-success);
+            color: var(--white);
+            border-left-color: var(--success-green);
+        }
+
+        .calc-step.total .step-number {
+            background: var(--white);
+            color: var(--success-green);
+        }
+
+        .calc-step.total .step-text {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculation-box {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Calculator Section Premium */
+        .calculator {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .calculator-inputs {
+            background: var(--light-gray);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+        }
+
+        .input-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: var(--transition-fast);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(77, 166, 255, 0.1);
+        }
+
+        .btn-calculate {
+            width: 100%;
+            background: var(--gradient-energy);
+            color: var(--white);
+            border: none;
+            padding: 1.2rem;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .calculator-results {
+            background: var(--light-gray);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast);
+        }
+
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .result-card.total {
+            grid-column: 1 / -1;
+            background: var(--gradient-success);
+            color: var(--white);
+        }
+
+        .result-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .result-value {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-detail {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .level-indicator {
+            text-align: center;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .level-badge {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .level-description {
+            color: var(--dark-text);
+            opacity: 0.8;
+        }
+
+        /* CTA Section Premium */
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .cta-description {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight-item i {
+            color: var(--success-green);
+            font-size: 1.2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-large {
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+        }
+
+        .urgency-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: var(--gradient-energy);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            max-width: 400px;
+            margin: 0 auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .urgency-icon {
+            font-size: 1.5rem;
+        }
+
+        .urgency-text {
+            font-weight: 600;
+        }
+
+        .bonus-detail {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Welcome Kit Section Premium */
+        .welcome-kit {
+            padding: 6rem 0;
+            background: var(--light-gray);
+        }
+
+        .kit-importance {
+            margin-bottom: 3rem;
+        }
+
+        .importance-box {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .importance-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .importance-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .importance-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .kit-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .kit-hero {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3rem;
+        }
+
+        .kit-price {
+            text-align: center;
+        }
+
+        .price-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            color: var(--energy-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-description {
+            color: var(--dark-text);
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .kit-description h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .kit-description p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .products-grid h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .products-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-category h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .product-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+
+        .product-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .product-name {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .product-value {
+            font-size: 0.9rem;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        .kit-summary {
+            margin-bottom: 3rem;
+        }
+
+        .summary-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .summary-box h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .value-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .value-item:last-child {
+            border-bottom: none;
+        }
+
+        .value-item.total {
+            font-size: 1.2rem;
+            border-top: 2px solid var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .value-item.savings {
+            background: var(--success-green);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .value {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .kit-cta {
+            text-align: center;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-box .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .kit-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .products-list {
+                grid-template-columns: 1fr;
+            }
+
+            .importance-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .cta-box .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Footer Premium */
+        .footer {
+            background: var(--dark-text);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-blue);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info i {
+            color: var(--secondary-blue);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .footer-legal a:hover {
+            opacity: 1;
+            color: var(--secondary-blue);
+        }
+
+        .trademark-info {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--energy-orange);
+        }
+
+        .trademark-info p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .company-details {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .company-details p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Responsive Design Avanzato */
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-large {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cta-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .mlm-level .level-cards {
+                flex-direction: column;
+            }
+        }
+
+        /* Loading Animation Premium */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen Premium -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header Premium -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">The Revolution 3.5.8 Elite</div>
+            <ul class="nav-menu">
+                                    <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#welcome-kit" class="nav-link">Welcome Kit</a></li>
+                    <li class="nav-item"><a href="#perfect-system" class="nav-link">System</a></li>
+                    <li class="nav-item"><a href="#mlm-system" class="nav-link">MLM</a></li>
+                    <li class="nav-item"><a href="#calculator" class="nav-link">Calculator</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section Premium -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">The Revolution 3.5.8 Elite</h1>
+            <p class="hero-subtitle">The Most Advanced MLM Commission System</p>
+            <p class="hero-description">
+                Discover how to transform your network into a results machine, with 43% total commissions and an unprecedented meritocratic plan.
+            </p>
+            <p class="hero-description">
+                This system was not born by chance. It is inspired by the Fibonacci sequence, the natural law that regulates harmonious and progressive growth found in flowers, seashells, even galaxies.
+            </p>
+            <p class="hero-description">
+                Just as in nature every element grows in balance, our commission plan has been built to grow in a sustainable and natural way:
+            </p>
+            <div class="hero-benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-seedling"></i>
+                    <span>Immediate rewards for those who start.</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progressive and predictable growth for those who commit.</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-crown"></i>
+                    <span>Extraordinary rewards for those who reach the top.</span>
+                </div>
+            </div>
+            <p class="hero-description">
+                <strong>The Revolution 3.5.8</strong> is not just a commission plan.
+            </p>
+            <p class="hero-description">
+                It is the new era of Network Marketing, where mathematics, meritocracy and innovation work together to transform your network into a winning, scalable and secure system.
+            </p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Discover More
+                </a>
+                <a href="#calculator" class="btn-secondary">
+                    <i class="fas fa-calculator"></i> Calculate Earnings
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Features Section Premium -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🚀 Caratteristiche Premium</h2>
+                <p class="section-subtitle">Scopri perché The Revolution 3.5.8 Elite è il sistema MLM più avanzato</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>43% Commissioni Totali</h3>
+                    <p>Il sistema di commissioni più generoso del settore MLM, con guadagni garantiti dal primo giorno.</p>
+                    <div class="feature-highlight">Core 28% + Step Up 10% + Elite Club 5%</div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Sistema MLM Avanzato</h3>
+                    <p>Struttura ad albero intelligente che moltiplica i tuoi guadagni con ogni nuovo membro della squadra.</p>
+                    <div class="feature-highlight">Crescita esponenziale</div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Welcome Kit Completo</h3>
+                    <p>Kit di benvenuto da €248 con prodotti Pentawash, strumenti business e formazione continua.</p>
+                    <div class="feature-highlight">Valore €120+ prodotti</div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Pentawash Elite Club</h3>
+                    <p>Condivisione del 5% del fatturato globale per gli ambassador che raggiungono i livelli superiori.</p>
+                    <div class="feature-highlight">Club esclusivo</div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Prodotto Pentawash Esclusivo</h3>
+                    <p>Il nostro prodotto unico e rivoluzionario che nessun altro ha. Tecnologia brevettata e risultati garantiti.</p>
+                    <div class="feature-highlight">Esclusivo e brevettato</div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Pentagame Gamification</h3>
+                    <p>Pentagame evoluto: token e premi esclusivi. Classifiche mensili e challenge settimanali per micro-incentivi.</p>
+                    <div class="feature-highlight">Gamification avanzata</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Kit Section Premium -->
+    <section class="welcome-kit" id="welcome-kit">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎁 Welcome Kit Obbligatorio</h2>
+                <p class="section-subtitle">Il tuo passaporto per entrare in The Revolution 3.5.8 Elite</p>
+            </div>
+            
+            <div class="kit-importance" data-aos="fade-up" data-aos-delay="100">
+                <div class="importance-box">
+                    <div class="importance-icon">⚠️</div>
+                    <div class="importance-content">
+                        <h3>Accesso Obbligatorio al Sistema</h3>
+                        <p><strong>Il Welcome Kit è OBBLIGATORIO per entrare a far parte di The Revolution 3.5.8 Elite.</strong> Senza questo kit non potrai accedere al sistema di commissioni, ai bonus e alle opportunità del network marketing.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="kit-content">
+                <div class="kit-hero" data-aos="fade-up" data-aos-delay="200">
+                    <div class="kit-price">
+                        <div class="price-tag">€248</div>
+                        <div class="price-description">Valore reale del kit</div>
+                    </div>
+                    <div class="kit-description">
+                        <h3>Il tuo investimento iniziale</h3>
+                        <p>Questo non è un semplice acquisto: è il tuo biglietto d'ingresso in un sistema che può trasformare la tua vita finanziaria.</p>
+                    </div>
+                </div>
+                
+                <div class="products-grid" data-aos="fade-up" data-aos-delay="300">
+                    <h3>📦 Cosa Include il Welcome Kit</h3>
+                    <div class="products-list">
+                        <div class="product-category">
+                            <h4>🧽 Prodotti Pentawash</h4>
+                            <div class="product-items">
+                                <div class="product-item">
+                                    <div class="product-icon">📦</div>
+                                    <div class="product-details">
+                                        <span class="product-name">8 confezioni da 10 panni</span>
+                                        <span class="product-value">Valore: €90</span>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">📦</div>
+                                    <div class="product-details">
+                                        <span class="product-name">1 confezione da 30 panni</span>
+                                        <span class="product-value">Valore: €15</span>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">📦</div>
+                                    <div class="product-details">
+                                        <span class="product-name">1 confezione da 50 panni</span>
+                                        <span class="product-value">Valore: €25</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-category">
+                            <h4>🎯 Strumenti Business</h4>
+                            <div class="product-items">
+                                <div class="product-item">
+                                    <div class="product-icon">💼</div>
+                                    <div class="product-details">
+                                        <span class="product-name">2 gestionali professionali</span>
+                                        <span class="product-value">Gratuito</span>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">🎮</div>
+                                    <div class="product-details">
+                                        <span class="product-name">Programma completo Gratta & Vinci Digitale</span>
+                                        <span class="product-value">Valore: €450</span>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">📚</div>
+                                    <div class="product-details">
+                                        <span class="product-name">Formazione continua settimanale</span>
+                                        <span class="product-value">Gratuito</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="kit-summary" data-aos="fade-up" data-aos-delay="400">
+                    <div class="summary-box">
+                        <h4>💰 Riepilogo Valore Welcome Kit</h4>
+                        <div class="value-breakdown">
+                            <div class="value-item">
+                                <span>Prodotti Pentawash:</span>
+                                <span class="value">€130</span>
+                            </div>
+                            <div class="value-item">
+                                <span>Strumenti Business:</span>
+                                <span class="value">€450</span>
+                            </div>
+                            <div class="value-item total">
+                                <span><strong>Valore Totale:</strong></span>
+                                <span class="value"><strong>€580</strong></span>
+                            </div>
+                            <div class="value-item savings">
+                                <span>Risparmio:</span>
+                                <span class="value">€332</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="kit-cta" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cta-box">
+                        <h3>🚀 Pronto a Iniziare la Tua Rivoluzione?</h3>
+                        <p>Il Welcome Kit è il tuo primo passo verso la libertà finanziaria. Non è un costo, è un investimento nel tuo futuro.</p>
+                        <div class="cta-buttons">
+                            <a href="mailto:info@washwt.it" class="btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                Richiedi il Welcome Kit
+                            </a>
+                            <a href="#calculator" class="btn-secondary">
+                                <i class="fas fa-calculator"></i>
+                                Calcola i Tuoi Guadagni
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema Perfetto Section Premium -->
+    <section class="perfect-system" id="perfect-system">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎯 Il Sistema Perfetto</h2>
+                <p class="section-subtitle">Perché The Revolution 3.5.8 è logico, potente e matematicamente perfetto</p>
+            </div>
+            
+            <div class="system-explanation">
+                <div class="explanation-intro">
+                    <p class="intro-text">
+                        Il sistema The Revolution 3.5.8 è logico e potente perché unisce <strong>matematica sostenibile</strong>, 
+                        <strong>meritocrazia reale</strong> e <strong>marketing emozionale</strong>. 
+                        Ecco perché può essere definito un sistema commissioni perfetto:
+                    </p>
+                    <div class="fibonacci-note">
+                        <div class="fibonacci-icon">🌻</div>
+                        <p><strong>Ispirato alla Sequenza di Fibonacci:</strong> Come in natura, ogni elemento cresce in equilibrio armonioso, creando un sistema matematicamente perfetto e sostenibile.</p>
+                    </div>
+                </div>
+                
+                <div class="explanation-grid">
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-header">
+                            <div class="card-icon">🧮</div>
+                            <h3>1. Sostenibilità Matematica</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Il tetto massimo è fissato al <strong>43% del fatturato</strong>. Questo significa che:</p>
+                            <ul>
+                                <li>Ogni bonus è già previsto nei margini, evitando "buchi" di cassa.</li>
+                                <li>La crescita è scalabile: che la rete abbia 100 o 10.000 ambassador, il sistema resta economicamente equilibrato.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <div class="card-icon">⚖️</div>
+                            <h3>2. Meritocrazia Vera</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Il piano premia chi lavora, senza regalare soldi a chi resta fermo:</p>
+                            <ul>
+                                <li><strong>Core Commission alta (28%)</strong> → guadagni subito, anche se sei nuovo.</li>
+                                <li><strong>Step Up Bonus (10%)</strong> → più cresci, più guadagni, con livelli chiari e raggiungibili.</li>
+                                <li><strong>Infinity Pool (5%)</strong> → un premio esclusivo per chi mantiene volumi seri e costruisce stabilità.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-header">
+                            <div class="card-icon">🚀</div>
+                            <h3>3. Spinta Motivazionale</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Ogni parte del piano stimola comportamenti virtuosi:</p>
+                            <ul>
+                                <li><strong>Fast Start Bonus</strong> → entusiasmo e risultati nei primi 60 giorni.</li>
+                                <li><strong>Matching Bonus</strong> → spinge i leader a far crescere i propri diretti.</li>
+                                <li><strong>Gamification</strong> → mantiene alta l'energia con sfide, premi e classifiche.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-header">
+                            <div class="card-icon">🔄</div>
+                            <h3>4. Sinergia con il Prodotto</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Pentawash non è un prodotto qualunque: è innovativo, utile e accessibile. Questo crea un ciclo perfetto:</p>
+                            <ul>
+                                <li>Il prodotto si vende facilmente → più vendite → più commissioni → più motivazione.</li>
+                                <li>Più ambassador lo usano, più diventa credibile e desiderato → la rete si autoalimenta.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-header">
+                            <div class="card-icon">🔍</div>
+                            <h3>5. Chiarezza e Trasparenza</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Ogni ambassador capisce subito:</p>
+                            <ul>
+                                <li>Quanto può guadagnare oggi.</li>
+                                <li>Quanto può guadagnare domani con impegno e crescita.</li>
+                            </ul>
+                            <p>Nessun calcolo nascosto, nessuna condizione "nascosta": questo aumenta fiducia e fidelizzazione.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="system-conclusion" data-aos="fade-up" data-aos-delay="600">
+                    <div class="conclusion-box">
+                        <h3>🎯 Risultato: Un Sistema Matematicamente Perfetto</h3>
+                        <p>
+                            The Revolution 3.5.8 non è solo un piano di commissioni: è un <strong>ecosistema matematicamente bilanciato</strong> 
+                            che premia la crescita sostenibile, stimola comportamenti virtuosi e crea valore reale per tutti i partecipanti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MLM System Section Premium -->
+    <section class="mlm-system" id="mlm-system">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🌳 Sistema MLM Elite</h2>
+                <p class="section-subtitle">La Formula dell'Albero di Crescita Avanzata di The Revolution 3.5.8</p>
+            </div>
+            
+            <div class="mlm-visualization">
+                <div class="mlm-level level-1" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="level-card primary">
+                        <div class="level-icon">👑</div>
+                        <h3>TU - Ambassador</h3>
+                        <div class="commission-rate">28% + 5%</div>
+                        <p>Vendite personali + Primo livello squadra</p>
+                    </div>
+                </div>
+                
+                <div class="mlm-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow">↓</div>
+                </div>
+                
+                <div class="mlm-level level-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="level-cards">
+                        <div class="level-card secondary">
+                            <div class="level-icon">👤</div>
+                            <h4>Diretto 1</h4>
+                            <div class="commission-rate">5%</div>
+                        </div>
+                        <div class="level-card secondary">
+                            <div class="level-icon">👤</div>
+                            <h4>Diretto 2</h4>
+                            <div class="commission-rate">5%</div>
+                        </div>
+                        <div class="level-card secondary">
+                            <div class="level-icon">👤</div>
+                            <h4>Diretto 3</h4>
+                            <div class="commission-rate">5%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mlm-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow">↓</div>
+                </div>
+                
+                <div class="mlm-level level-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="level-cards">
+                        <div class="level-card accent">
+                            <div class="level-icon">👥</div>
+                            <h4>Indiretto 1</h4>
+                            <div class="commission-rate">Step Up</div>
+                        </div>
+                        <div class="level-card accent">
+                            <div class="level-icon">👥</div>
+                            <h4>Indiretto 2</h4>
+                            <div class="commission-rate">Step Up</div>
+                        </div>
+                        <div class="level-card accent">
+                            <div class="level-icon">👥</div>
+                            <h4>Indiretto 3</h4>
+                            <div class="commission-rate">Step Up</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mlm-formula" data-aos="fade-up" data-aos-delay="400">
+                <h3>🧮 Formula del Guadagno Elite</h3>
+                <div class="formula-container">
+                    <div class="formula-main">
+                        <span class="formula-title">Guadagno Totale =</span>
+                        <div class="formula-components">
+                            <span class="component">Core Commission</span>
+                            <span class="operator">+</span>
+                            <span class="component">Step Up Bonus</span>
+                            <span class="operator">+</span>
+                            <span class="component">Pentawash Elite Club</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabella Livelli e Bonus Step Up -->
+            <div class="levels-table" data-aos="fade-up" data-aos-delay="500">
+                <h3>📈 Tabella Livelli e Bonus Step Up</h3>
+                <div class="table-container">
+                    <table class="levels-table-content">
+                        <thead>
+                            <tr>
+                                <th>Livello</th>
+                                <th>Volume Squadra/Mese</th>
+                                <th>Bonus Extra</th>
+                                <th>Descrizione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="level-row builder">
+                                <td class="level-name">
+                                    <div class="level-badge builder">Builder</div>
+                                </td>
+                                <td class="volume-range">0 – 1.000 €</td>
+                                <td class="bonus-percentage">+1%</td>
+                                <td class="level-description">Stai costruendo una squadra solida</td>
+                            </tr>
+                            <tr class="level-row leader">
+                                <td class="level-name">
+                                    <div class="level-badge leader">Leader</div>
+                                </td>
+                                <td class="volume-range">1.001 – 5.500 €</td>
+                                <td class="bonus-percentage">+2%</td>
+                                <td class="level-description">La tua squadra sta crescendo!</td>
+                            </tr>
+                            <tr class="level-row mentor">
+                                <td class="level-name">
+                                    <div class="level-badge mentor">Mentor</div>
+                                </td>
+                                <td class="volume-range">5.501 – 20.000 €</td>
+                                <td class="bonus-percentage">+3%</td>
+                                <td class="level-description">Sei un leader riconosciuto!</td>
+                            </tr>
+                            <tr class="level-row legend">
+                                <td class="level-name">
+                                    <div class="level-badge legend">Legend</div>
+                                </td>
+                                <td class="volume-range">20.001 €+</td>
+                                <td class="bonus-percentage">+5%</td>
+                                <td class="level-description">Livello Elite - Hai raggiunto la leggenda!</td>
+                            </tr>
+                            <tr class="level-row iconic">
+                                <td class="level-name">
+                                    <div class="level-badge iconic">Iconic</div>
+                                </td>
+                                <td class="volume-range">50.000 €+</td>
+                                <td class="bonus-percentage">+8%</td>
+                                <td class="level-description">Livello Iconico - Sei un vero maestro del MLM!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-info">
+                    <div class="info-box">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <h4>Come Funziona il Sistema Step Up</h4>
+                            <p>Il bonus Step Up si calcola sul volume squadra mensile. Più alta è la tua squadra, più alto è il tuo bonus extra. Questo sistema premia la crescita sostenibile e la leadership.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pentawash Elite Club Section Premium -->
+    <section class="infinity-pool" id="infinity-pool">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🏆 Pentawash Elite Club</h2>
+                <p class="section-subtitle">Condivisione del 5% del Fatturato Globale</p>
+            </div>
+            
+            <div class="infinity-content">
+                <div class="infinity-hero" data-aos="fade-up" data-aos-delay="100">
+                    <div class="infinity-icon">🌊</div>
+                    <h3>Il 5% del Fatturato Globale</h3>
+                    <p class="infinity-description">
+                        Viene condiviso tra gli ambassador che soddisfano i requisiti di eccellenza
+                    </p>
+                </div>
+                
+                <div class="requirements-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="requirement-card">
+                        <div class="requirement-icon">👥</div>
+                        <h4>5+ Ambassador Attivi</h4>
+                        <p>Devi avere almeno 5 ambassador attivi nella tua squadra che generano volume mensile</p>
+                        <div class="requirement-status">Requisito Base</div>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <div class="requirement-icon">📊</div>
+                        <h4>15.000 € Volume Squadra</h4>
+                        <p>La tua squadra deve generare almeno €15.000 di volume mensile</p>
+                        <div class="requirement-status">Requisito Volume</div>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <div class="requirement-icon">⏰</div>
+                        <h4>2 Mesi Consecutivi</h4>
+                        <p>Devi mantenere entrambi i requisiti per 2 mesi consecutivi</p>
+                        <div class="requirement-status">Requisito Stabilità</div>
+                    </div>
+                </div>
+                
+                <div class="infinity-benefits" data-aos="fade-up" data-aos-delay="300">
+                    <h3>🌟 Vantaggi del Pentawash Elite Club</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-content">
+                                <h4>Guadagni Illimitati</h4>
+                                <p>Il 5% del fatturato globale si divide tra tutti gli ambassador qualificati</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🏆</div>
+                            <div class="benefit-content">
+                                <h4>Riconoscimento Elite</h4>
+                                <p>Accesso esclusivo al club degli ambassador di eccellenza</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🚀</div>
+                            <div class="benefit-content">
+                                <h4>Crescita Sostenibile</h4>
+                                <p>Premia la costruzione di reti solide e stabili nel tempo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="infinity-calculation" data-aos="fade-up" data-aos-delay="400">
+                    <div class="calculation-box">
+                        <h4>🧮 Come Si Calcola il Bonus Elite Club</h4>
+                        <div class="calculation-example">
+                            <p><strong>Esempio:</strong> Se il fatturato globale è €1.000.000 e ci sono 50 ambassador qualificati:</p>
+                            <div class="calculation-steps">
+                                <div class="calc-step">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">5% di €1.000.000 = €50.000</span>
+                                </div>
+                                <div class="calc-step">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">€50.000 ÷ 50 ambassador = €1.000 per ambassador</span>
+                                </div>
+                                <div class="calc-step total">
+                                    <span class="step-number">🎯</span>
+                                    <span class="step-text">Bonus mensile extra: €1.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section Premium -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">💰 Calcolatore Commissioni Elite</h2>
+                <p class="section-subtitle">Calcola i tuoi potenziali guadagni con The Revolution 3.5.8</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-inputs" data-aos="fade-right" data-aos-delay="100">
+                    <div class="input-group">
+                        <label for="personalSales">
+                            <i class="fas fa-shopping-cart"></i>
+                            Vendite Personali (€)
+                        </label>
+                        <input type="number" id="personalSales" placeholder="0" min="0" step="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="teamVolume">
+                            <i class="fas fa-users"></i>
+                            Volume Squadra (€)
+                        </label>
+                        <input type="number" id="teamVolume" placeholder="0" min="0" step="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="ambassadors">
+                            <i class="fas fa-user-tie"></i>
+                            Numero Ambassador
+                        </label>
+                        <input type="number" id="ambassadors" placeholder="0" min="0" step="1">
+                    </div>
+                    
+                    <button class="btn-calculate" onclick="calculateCommissions()">
+                        <i class="fas fa-calculator"></i>
+                        Calcola Guadagni
+                    </button>
+                </div>
+                
+                <div class="calculator-results" data-aos="fade-left" data-aos-delay="200">
+                    <div class="results-header">
+                        <h3>📊 I Tuoi Risultati</h3>
+                        <p>Commissioni mensili con The Revolution 3.5.8 Elite</p>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card core">
+                            <div class="result-icon">💰</div>
+                            <div class="result-title">Core Commission</div>
+                            <div class="result-value" id="coreCommission">€0</div>
+                            <div class="result-detail">Vendite personali + Primo livello</div>
+                        </div>
+                        
+                        <div class="result-card stepup">
+                            <div class="result-icon">📈</div>
+                            <div class="result-title">Step Up Bonus</div>
+                            <div class="result-value" id="stepUpBonus">€0</div>
+                            <div class="result-detail">Bonus per volume squadra</div>
+                        </div>
+                        
+                        <div class="result-card infinity">
+                            <div class="result-icon">🏆</div>
+                            <div class="result-title">Pentawash Elite Club</div>
+                            <div class="result-value" id="eliteClubBonus">€0</div>
+                            <div class="result-detail">Condivisione globale</div>
+                        </div>
+                        
+                        <div class="result-card total">
+                            <div class="result-icon">🎯</div>
+                            <div class="result-title">TOTALE MENSUALE</div>
+                            <div class="result-value" id="totalMonthly">€0</div>
+                            <div class="result-detail">Guadagno totale garantito</div>
+                        </div>
+                    </div>
+                    
+                    <div class="level-indicator">
+                        <div class="level-badge" id="levelBadge">Starter</div>
+                        <div class="level-description" id="levelDescription">Inizia qui e cresci con la tua squadra!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section Premium -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2 class="cta-title">🚀 Pronto a Trasformare la Tua Vita?</h2>
+                <p class="cta-description">
+                    Unisciti a The Revolution 3.5.8 Elite e inizia a costruire il tuo impero finanziario oggi stesso!
+                </p>
+                
+                <div class="cta-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>43% Commissioni Totali</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Welcome Kit da €248</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Sistema MLM Avanzato</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Formazione Continua</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#calculator" class="btn-primary btn-large">
+                        <i class="fas fa-calculator"></i>
+                        Calcola i Tuoi Guadagni
+                    </a>
+                                    <a href="mailto:info@washwt.it" class="btn-secondary btn-large">
+                    <i class="fas fa-envelope"></i>
+                    Contattaci Ora
+                </a>
+                </div>
+                
+                <div class="urgency-banner">
+                    <div class="urgency-icon">⏰</div>
+                    <div class="urgency-text">
+                        <strong>Offerta Limitata!</strong> Solo per i primi 100 Ambassador
+                        <div class="bonus-detail">
+                            <strong>🎁 Bonus Esclusivo:</strong> +5% per i primi 2 mesi!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">The Revolution 3.5.8 Elite</h3>
+                    <p>Il sistema MLM più avanzato e trasparente mai progettato. Trasforma la tua rete in una macchina di risultati.</p>
+                    <div class="trademark-info">
+                        <p><strong>The Revolution 3.5.8 is a trademark of GLG Capital Consulting LLC</strong></p>
+                        <p>1309 Coffeen Avenue, STE 1200, Sheridan, Wyoming 82801 (USA)</p>
+                        <p><strong>Managed in Europe by Magnificus Dominus Consulting Europe Srl</strong></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Link Rapidi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Caratteristiche</a></li>
+                        <li><a href="#mlm-system">Sistema MLM</a></li>
+                        <li><a href="#calculator">Calcolatore</a></li>
+                        <li><a href="#contact">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Supporto</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Formazione</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Assistenza</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contatti</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> corefound@glgcapitalgroupllc.com</p>
+                        <p><i class="fas fa-globe"></i> www.pentashop.world</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Firenze, Italia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Revolution 3.5.8 Elite. Tutti i diritti riservati.</p>
+                <div class="company-details">
+                    <p><strong>Share capital:</strong> €180,000 – <strong>Registered office:</strong> Via della Rondinella 63, Florence – <strong>VAT:</strong> 02394750745</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Termini di Servizio</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Premium -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer per Animazioni
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Osserva tutti gli elementi animabili
+        document.querySelectorAll('.hero-content > *').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Calcolatore Commissioni Premium
+        function calculateCommissions() {
+            const personalSales = parseFloat(document.getElementById('personalSales').value) || 0;
+            const teamVolume = parseFloat(document.getElementById('teamVolume').value) || 0;
+            const ambassadors = parseInt(document.getElementById('ambassadors').value) || 0;
+
+            // Calcoli commissioni
+            const coreCommission = (personalSales * 0.28) + (teamVolume * 0.05);
+            
+            // Step Up Bonus basato sul volume squadra
+            let stepUpRate = 0;
+            let level = 'Builder';
+            let levelDescription = 'Stai costruendo una squadra solida!';
+            
+            if (teamVolume >= 1000) {
+                stepUpRate = 0.01;
+                level = 'Builder';
+                levelDescription = 'Stai costruendo una squadra solida!';
+            }
+            if (teamVolume >= 5500) {
+                stepUpRate = 0.02;
+                level = 'Leader';
+                levelDescription = 'Eccellente! La tua squadra sta crescendo!';
+            }
+            if (teamVolume >= 20000) {
+                stepUpRate = 0.03;
+                level = 'Mentor';
+                levelDescription = 'Fantastico! Sei un leader riconosciuto!';
+            }
+            if (teamVolume >= 25000) {
+                stepUpRate = 0.05;
+                level = 'Legend';
+                levelDescription = 'Incredibile! Hai raggiunto il livello Elite!';
+            }
+            if (teamVolume >= 50000) {
+                stepUpRate = 0.08;
+                level = 'Iconic';
+                levelDescription = 'Leggendario! Sei un vero maestro del MLM!';
+            }
+            
+            const stepUpBonus = teamVolume * stepUpRate;
+            
+            // Pentawash Elite Club (se requisiti soddisfatti)
+            let eliteClubBonus = 0;
+            if (ambassadors >= 5 && teamVolume >= 15000) {
+                eliteClubBonus = teamVolume * 0.05; // 5% del volume squadra
+            }
+            
+            const totalMonthly = coreCommission + stepUpBonus + eliteClubBonus;
+            
+            // Aggiorna risultati
+            document.getElementById('coreCommission').textContent = `€${coreCommission.toFixed(0)}`;
+            document.getElementById('stepUpBonus').textContent = `€${stepUpBonus.toFixed(0)}`;
+            document.getElementById('eliteClubBonus').textContent = `€${eliteClubBonus.toFixed(0)}`;
+            document.getElementById('totalMonthly').textContent = `€${totalMonthly.toFixed(0)}`;
+            
+            // Aggiorna livello
+            document.getElementById('levelBadge').textContent = level;
+            document.getElementById('levelDescription').textContent = levelDescription;
+            
+            // Animazione risultati
+            animateResults();
+        }
+
+        // Animazione risultati
+        function animateResults() {
+            const resultCards = document.querySelectorAll('.result-card');
+            resultCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        card.style.transform = 'scale(1)';
+                    }, 200);
+                }, index * 100);
+            });
+        }
+
+        // Input validation e formattazione
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value < 0) this.value = 0;
+                if (this.value > 1000000) this.value = 1000000;
+            });
+            
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculateCommissions();
+                }
+            });
+        });
+
+        // Smooth scroll per tutte le sezioni
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animazioni on-scroll per tutte le sezioni
+        const allSections = document.querySelectorAll('section');
+        allSections.forEach(section => {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'all 1s ease-out';
+            sectionObserver.observe(section);
+        });
+    </script>
+</body>
+</html>
