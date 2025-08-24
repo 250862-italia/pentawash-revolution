@@ -982,6 +982,267 @@
             }
         }
 
+        /* Infinity Pool Section Premium */
+        .infinity-pool {
+            padding: 6rem 0;
+            background: var(--light-gray);
+        }
+
+        .infinity-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .infinity-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .infinity-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .infinity-hero h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .infinity-description {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border-color);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-smooth);
+        }
+
+        .requirement-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-aqua);
+        }
+
+        .requirement-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirement-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .requirement-card p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirement-status {
+            background: var(--gradient-success);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .infinity-benefits {
+            margin-bottom: 4rem;
+        }
+
+        .infinity-benefits h3 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .infinity-calculation {
+            text-align: center;
+        }
+
+        .calculation-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculation-box h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .calculation-example p {
+            font-size: 1.1rem;
+            color: var(--dark-text);
+            margin-bottom: 2rem;
+        }
+
+        .calculation-steps {
+            display: grid;
+            gap: 1rem;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .calc-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-aqua);
+        }
+
+        .step-number {
+            background: var(--accent-aqua);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+
+        .calc-step.total {
+            background: var(--gradient-success);
+            color: var(--white);
+            border-left-color: var(--success-green);
+        }
+
+        .calc-step.total .step-number {
+            background: var(--white);
+            color: var(--success-green);
+        }
+
+        .calc-step.total .step-text {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculation-box {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* Calculator Section Premium */
         .calculator {
             padding: 6rem 0;
@@ -1792,6 +2053,101 @@
                         <div class="info-content">
                             <h4>Come Funziona il Sistema Step Up</h4>
                             <p>Il bonus Step Up si calcola sul volume squadra mensile. Più alta è la tua squadra, più alto è il tuo bonus extra. Questo sistema premia la crescita sostenibile e la leadership.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinity Pool Section Premium -->
+    <section class="infinity-pool" id="infinity-pool">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🌊 Infinity Pool</h2>
+                <p class="section-subtitle">Condivisione del 5% del Fatturato Globale</p>
+            </div>
+            
+            <div class="infinity-content">
+                <div class="infinity-hero" data-aos="fade-up" data-aos-delay="100">
+                    <div class="infinity-icon">🌊</div>
+                    <h3>Il 5% del Fatturato Globale</h3>
+                    <p class="infinity-description">
+                        Viene condiviso tra gli ambassador che soddisfano i requisiti di eccellenza
+                    </p>
+                </div>
+                
+                <div class="requirements-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="requirement-card">
+                        <div class="requirement-icon">👥</div>
+                        <h4>5+ Ambassador Attivi</h4>
+                        <p>Devi avere almeno 5 ambassador attivi nella tua squadra che generano volume mensile</p>
+                        <div class="requirement-status">Requisito Base</div>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <div class="requirement-icon">📊</div>
+                        <h4>15.000 € Volume Squadra</h4>
+                        <p>La tua squadra deve generare almeno €15.000 di volume mensile</p>
+                        <div class="requirement-status">Requisito Volume</div>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <div class="requirement-icon">⏰</div>
+                        <h4>2 Mesi Consecutivi</h4>
+                        <p>Devi mantenere entrambi i requisiti per 2 mesi consecutivi</p>
+                        <div class="requirement-status">Requisito Stabilità</div>
+                    </div>
+                </div>
+                
+                <div class="infinity-benefits" data-aos="fade-up" data-aos-delay="300">
+                    <h3>🌟 Vantaggi dell'Infinity Pool</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-content">
+                                <h4>Guadagni Illimitati</h4>
+                                <p>Il 5% del fatturato globale si divide tra tutti gli ambassador qualificati</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🏆</div>
+                            <div class="benefit-content">
+                                <h4>Riconoscimento Elite</h4>
+                                <p>Accesso esclusivo al club degli ambassador di eccellenza</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🚀</div>
+                            <div class="benefit-content">
+                                <h4>Crescita Sostenibile</h4>
+                                <p>Premia la costruzione di reti solide e stabili nel tempo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="infinity-calculation" data-aos="fade-up" data-aos-delay="400">
+                    <div class="calculation-box">
+                        <h4>🧮 Come Si Calcola</h4>
+                        <div class="calculation-example">
+                            <p><strong>Esempio:</strong> Se il fatturato globale è €1.000.000 e ci sono 50 ambassador qualificati:</p>
+                            <div class="calculation-steps">
+                                <div class="calc-step">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">5% di €1.000.000 = €50.000</span>
+                                </div>
+                                <div class="calc-step">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">€50.000 ÷ 50 ambassador = €1.000 per ambassador</span>
+                                </div>
+                                <div class="calc-step total">
+                                    <span class="step-number">🎯</span>
+                                    <span class="step-text">Bonus mensile extra: €1.000</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
