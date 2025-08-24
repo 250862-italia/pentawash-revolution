@@ -193,9 +193,45 @@
 
         .hero-description {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             opacity: 0.8;
             animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .benefit-item i {
+            color: var(--energy-orange);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item span {
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .cta-buttons {
@@ -496,6 +532,32 @@
             color: var(--dark-text);
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .fibonacci-note {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: var(--dark-text);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--shadow-md);
+        }
+
+        .fibonacci-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .fibonacci-note p {
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.6;
         }
 
         .explanation-grid {
@@ -1720,7 +1782,33 @@
             <h1 class="hero-title">The Revolution 3.5.8 Elite</h1>
             <p class="hero-subtitle">Il Sistema di Commissioni Più Avanzato del MLM</p>
             <p class="hero-description">
-                Scopri come trasformare la tua rete in una macchina di risultati con il 43% di commissioni totali e un piano meritocratico senza precedenti.
+                Scopri come trasformare la tua rete in una macchina di risultati, con il 43% di commissioni totali e un piano meritocratico senza precedenti.
+            </p>
+            <p class="hero-description">
+                Questo sistema non è nato per caso. È ispirato alla sequenza di Fibonacci, la legge naturale che regola la crescita armoniosa e progressiva che trovi nei fiori, nelle conchiglie, persino nelle galassie.
+            </p>
+            <p class="hero-description">
+                Così come in natura ogni elemento cresce in equilibrio, anche il nostro piano di commissioni è stato costruito per crescere in modo sostenibile e naturale:
+            </p>
+            <div class="hero-benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-seedling"></i>
+                    <span>Premi immediati per chi inizia.</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Crescita progressiva e prevedibile per chi si impegna.</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-crown"></i>
+                    <span>Ricompense straordinarie per chi raggiunge i vertici.</span>
+                </div>
+            </div>
+            <p class="hero-description">
+                <strong>The Revolution 3.5.8</strong> non è solo un piano di commissioni.
+            </p>
+            <p class="hero-description">
+                È la nuova era del Network Marketing, dove matematica, meritocrazia e innovazione lavorano insieme per trasformare la tua rete in un sistema vincente, scalabile e sicuro.
             </p>
             <div class="cta-buttons">
                 <a href="#features" class="btn-primary">
@@ -1809,7 +1897,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">🎯 Il Sistema Perfetto</h2>
-                <p class="section-subtitle">Perché Pentawash Revolution 4.3 è logico, potente e matematicamente perfetto</p>
+                <p class="section-subtitle">Perché The Revolution 3.5.8 è logico, potente e matematicamente perfetto</p>
             </div>
             
             <div class="system-explanation">
@@ -1819,6 +1907,10 @@
                         <strong>meritocrazia reale</strong> e <strong>marketing emozionale</strong>. 
                         Ecco perché può essere definito un sistema commissioni perfetto:
                     </p>
+                    <div class="fibonacci-note">
+                        <div class="fibonacci-icon">🌻</div>
+                        <p><strong>Ispirato alla Sequenza di Fibonacci:</strong> Come in natura, ogni elemento cresce in equilibrio armonioso, creando un sistema matematicamente perfetto e sostenibile.</p>
+                    </div>
                 </div>
                 
                 <div class="explanation-grid">
