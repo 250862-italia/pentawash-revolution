@@ -474,6 +474,181 @@
             display: inline-block;
         }
 
+        /* Sistema Perfetto Section Premium */
+        .perfect-system {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .system-explanation {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .explanation-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            color: var(--dark-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .explanation-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border-color);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explanation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-smooth);
+        }
+
+        .explanation-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .explanation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary-blue);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .card-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .card-content p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .card-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .card-content strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .system-conclusion {
+            text-align: center;
+        }
+
+        .conclusion-box {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .conclusion-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .conclusion-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .conclusion-box strong {
+            color: var(--accent-aqua);
+        }
+
+        @media (max-width: 768px) {
+            .explanation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .conclusion-box {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+        }
+
         /* MLM System Section Premium */
         .mlm-system {
             padding: 6rem 0;
@@ -1189,6 +1364,111 @@
                     <h3>Pentagame Gamification</h3>
                     <p>Pentagame evoluto: token e premi esclusivi. Classifiche mensili e challenge settimanali per micro-incentivi.</p>
                     <div class="feature-highlight">Gamification avanzata</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema Perfetto Section Premium -->
+    <section class="perfect-system" id="perfect-system">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎯 Il Sistema Perfetto</h2>
+                <p class="section-subtitle">Perché Pentawash Revolution 4.3 è logico, potente e matematicamente perfetto</p>
+            </div>
+            
+            <div class="system-explanation">
+                <div class="explanation-intro">
+                    <p class="intro-text">
+                        Il sistema Pentawash Revolution 4.3 è logico e potente perché unisce <strong>matematica sostenibile</strong>, 
+                        <strong>meritocrazia reale</strong> e <strong>marketing emozionale</strong>. 
+                        Ecco perché può essere definito un sistema commissioni perfetto:
+                    </p>
+                </div>
+                
+                <div class="explanation-grid">
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-header">
+                            <div class="card-icon">🧮</div>
+                            <h3>1. Sostenibilità Matematica</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Il tetto massimo è fissato al <strong>43% del fatturato</strong>. Questo significa che:</p>
+                            <ul>
+                                <li>Ogni bonus è già previsto nei margini, evitando "buchi" di cassa.</li>
+                                <li>La crescita è scalabile: che la rete abbia 100 o 10.000 ambassador, il sistema resta economicamente equilibrato.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <div class="card-icon">⚖️</div>
+                            <h3>2. Meritocrazia Vera</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Il piano premia chi lavora, senza regalare soldi a chi resta fermo:</p>
+                            <ul>
+                                <li><strong>Core Commission alta (28%)</strong> → guadagni subito, anche se sei nuovo.</li>
+                                <li><strong>Step Up Bonus (10%)</strong> → più cresci, più guadagni, con livelli chiari e raggiungibili.</li>
+                                <li><strong>Infinity Pool (5%)</strong> → un premio esclusivo per chi mantiene volumi seri e costruisce stabilità.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-header">
+                            <div class="card-icon">🚀</div>
+                            <h3>3. Spinta Motivazionale</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Ogni parte del piano stimola comportamenti virtuosi:</p>
+                            <ul>
+                                <li><strong>Fast Start Bonus</strong> → entusiasmo e risultati nei primi 60 giorni.</li>
+                                <li><strong>Matching Bonus</strong> → spinge i leader a far crescere i propri diretti.</li>
+                                <li><strong>Gamification</strong> → mantiene alta l'energia con sfide, premi e classifiche.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-header">
+                            <div class="card-icon">🔄</div>
+                            <h3>4. Sinergia con il Prodotto</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Pentawash non è un prodotto qualunque: è innovativo, utile e accessibile. Questo crea un ciclo perfetto:</p>
+                            <ul>
+                                <li>Il prodotto si vende facilmente → più vendite → più commissioni → più motivazione.</li>
+                                <li>Più ambassador lo usano, più diventa credibile e desiderato → la rete si autoalimenta.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-header">
+                            <div class="card-icon">🔍</div>
+                            <h3>5. Chiarezza e Trasparenza</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Ogni ambassador capisce subito:</p>
+                            <ul>
+                                <li>Quanto può guadagnare oggi.</li>
+                                <li>Quanto può guadagnare domani con impegno e crescita.</li>
+                            </ul>
+                            <p>Nessun calcolo nascosto, nessuna condizione "nascosta": questo aumenta fiducia e fidelizzazione.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="system-conclusion" data-aos="fade-up" data-aos-delay="600">
+                    <div class="conclusion-box">
+                        <h3>🎯 Risultato: Un Sistema Matematicamente Perfetto</h3>
+                        <p>
+                            Pentawash Revolution 4.3 non è solo un piano di commissioni: è un <strong>ecosistema matematicamente bilanciato</strong> 
+                            che premia la crescita sostenibile, stimola comportamenti virtuosi e crea valore reale per tutti i partecipanti.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
