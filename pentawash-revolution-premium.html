@@ -235,6 +235,50 @@
             font-size: 1.1rem;
         }
 
+        /* Responsive per Mobile */
+        @media (max-width: 768px) {
+            .hero-benefits {
+                margin: 1.5rem 0;
+                gap: 0.8rem;
+            }
+
+            .benefit-item {
+                padding: 0.8rem 1rem;
+                background: rgba(255, 255, 255, 0.2);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .benefit-item i {
+                font-size: 1rem;
+            }
+
+            .benefit-item span {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-title {
+                margin-top: 2rem;
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .benefit-item span {
+                text-align: center;
+            }
+        }
+
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
