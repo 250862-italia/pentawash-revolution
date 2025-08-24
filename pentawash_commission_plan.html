@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentawash Revolution 4.3 - La Rivoluzione del MLM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Lato:wght@400;700;900&family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #4DA6FF;
+            --accent-aqua: #00CCCC;
+            --energy-orange: #FF6600;
+            --success-green: #00D4AA;
+            --warning-yellow: #FFD700;
+            --danger-red: #FF4757;
+            --light-gray: #F5F5F5;
+            --dark-gray: #2C3E50;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Animazioni Globali */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(255, 102, 0, 0.8); }
+        }
+        
+        /* Header con Countdown */
+        .header-countdown {
+            background: linear-gradient(135deg, var(--energy-orange), var(--warning-yellow));
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .countdown-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .countdown-timer {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+        
+        /* Container Principale */
+        .presentation-container {
+            width: 100%;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Slide Styling */
+        .slide {
+            width: 100%;
+            max-width: 1400px;
+            min-height: 90vh;
+            background: var(--white);
+            border-radius: 25px;
+            margin: 30px 0;
+            padding: 80px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--energy-orange), var(--accent-aqua), var(--secondary-blue));
+        }
+        
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--secondary-blue), var(--accent-aqua));
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Titoli e Sottotitoli */
+        .slide-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--energy-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        .slide-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--secondary-blue);
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideInRight 1s ease-out;
+        }
+        
+        .slide-content {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        /* Box Evidenziati */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--light-gray), #E8F4FD);
+            border-left: 8px solid var(--energy-orange);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1.4s ease-out;
+        }
+        
+        .highlight-box::before {
+            content: '💎';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 4rem;
+            opacity: 0.1;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .highlight-box h3 {
+            color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Carte Commissioni Premium */
+        .commission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .commission-card {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--accent-aqua));
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(77, 166, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.6s ease-out;
+        }
+        
+        .commission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(77, 166, 255, 0.6);
+        }
+        
+        .commission-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+        
+        .commission-card:hover::before {
+            left: 100%;
+        }
+        
+        .commission-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .commission-card .percentage {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 4rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .commission-card p {
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Tabelle Premium */
+        .table-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .table-container::before {
+            content: '📊';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        
+        .table th, .table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 3px solid var(--light-gray);
+        }
+        
+        .table th {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .table tr:hover {
+            background: linear-gradient(135deg, #F8F9FA, #E8F4FD);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+        
+        /* Griglia Icone Premium */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--light-gray), #E8F4FD);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.8s ease-out;
+        }
+        
+        .icon-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .icon-item .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .icon-item .icon.rocket { color: var(--energy-orange); }
+        .icon-item .icon.trophy { color: var(--secondary-blue); }
+        .icon-item .icon.crown { color: var(--accent-aqua); }
+        .icon-item .icon.game { color: var(--energy-orange); }
+        .icon-item .icon.medal { color: var(--secondary-blue); }
+        .icon-item .icon.target { color: var(--accent-aqua); }
+        
+        .icon-item h4 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .icon-item p {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Sezione CTA Premium */
+        .cta-section {
+            background: linear-gradient(135deg, var(--energy-orange), var(--warning-yellow));
+            color: white;
+            text-align: center;
+            padding: 80px;
+            border-radius: 25px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '🚀';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 6rem;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .cta-section::after {
+            content: '💎';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 6rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cta-section p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        /* Pulsanti Premium */
+        .btn-premium {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+        
+        /* Grafico a Torta Premium */
+        .pie-chart-premium {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            animation: fadeInUp 2s ease-out;
+        }
+        
+        .pie-segment-premium {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            clip: rect(0, 200px, 400px, 0);
+            transition: all 0.3s ease;
+        }
+        
+        .segment-1-premium {
+            background: conic-gradient(var(--secondary-blue) 0deg 100.8deg, transparent 100.8deg);
+        }
+        
+        .segment-2-premium {
+            background: conic-gradient(transparent 100.8deg, var(--accent-aqua) 100.8deg 136.8deg, transparent 136.8deg);
+        }
+        
+        .segment-3-premium {
+            background: conic-gradient(transparent 136.8deg, var(--energy-orange) 136.8deg 360deg);
+        }
+        
+        .chart-center-premium {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 500;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Legenda Premium */
+        .legend-premium {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item-premium {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .legend-item-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .legend-color-premium {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .color-1-premium { background: var(--secondary-blue); }
+        .color-2-premium { background: var(--accent-aqua); }
+        .color-3-premium { background: var(--energy-orange); }
+        
+        /* Testimonianze */
+        .testimonials {
+            background: linear-gradient(135deg, var(--light-gray), #E8F4FD);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .testimonial-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-item::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--secondary-blue);
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        /* Urgenza e Scarsità */
+        .urgency-banner {
+            background: linear-gradient(135deg, var(--danger-red), var(--energy-orange));
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .urgency-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 20px;
+                margin: 15px 0;
+            }
+            
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .commission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pie-chart-premium {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .chart-center-premium {
+                width: 80px;
+                height: 80px;
+                font-size: 1.2rem;
+            }
+            
+            .legend-premium {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con Countdown -->
+    <div class="header-countdown">
+        <span class="countdown-text">🚀 OFFERTA LIMITATA - Scade in:</span>
+        <span class="countdown-timer" id="countdown">23:59:59</span>
+    </div>
+
+    <div class="presentation-container">
+        
+        <!-- Slide 1 - Hero con Urgenza -->
+        <div class="slide">
+            <h1 class="slide-title">Pentawash Revolution 4.3</h1>
+            <p class="slide-subtitle">La Rivoluzione del MLM che Cambierà la Tua Vita</p>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">🔥 SOLO 50 POSTI DISPONIBILI - 37 GIÀ OCCUPATI! 🔥</div>
+            </div>
+            
+            <div class="slide-content">
+                <div class="highlight-box">
+                    <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 20px;">💎 La Nuova Era del Network Marketing</h3>
+                    <p style="text-align: center; font-size: 1.4rem; margin-bottom: 20px;">
+                        Scopri come trasformare la tua rete in un business redditizio con il sistema di commissioni più avanzato mai creato
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="#cta" class="btn-premium">🚀 INIZIA ORA - GRATIS!</a>
+                    </div>
+                </div>
+                
+                <div class="testimonials">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            "In soli 3 mesi ho raggiunto 15.000€ di guadagni mensili. Pentawash Revolution ha cambiato la mia vita!"
+                        </div>
+                        <div class="testimonial-author">- Marco Rossi, Legend Level</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 - Struttura Generale con Urgenza -->
+        <div class="slide">
+            <h1 class="slide-title">Struttura Generale</h1>
+            <p class="slide-subtitle">43% di Commissioni Totali - Mai Visto Prima!</p>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">⚡ BONUS DI BENVENUTO: +500€ per i primi 10 iscritti di oggi!</div>
+            </div>
+            
+            <div class="pie-chart-premium">
+                <div class="pie-segment-premium segment-1-premium"></div>
+                <div class="pie-segment-premium segment-2-premium"></div>
+                <div class="pie-segment-premium segment-3-premium"></div>
+                <div class="chart-center-premium">43%</div>
+            </div>
+            
+            <div class="legend-premium">
+                <div class="legend-item-premium">
+                    <div class="legend-color-premium color-1-premium"></div>
+                    <span>Core Commission - 28%</span>
+                </div>
+                <div class="legend-item-premium">
+                    <div class="legend-color-premium color-2-premium"></div>
+                    <span>Step Up Bonus - 10%</span>
+                </div>
+                <div class="legend-item-premium">
+                    <div class="legend-color-premium color-3-premium"></div>
+                    <span>Infinity Pool - 5%</span>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue); text-align: center;">💎 Sistema Trasparente e Semplice</h3>
+                <p style="text-align: center; font-size: 1.3rem;">
+                    Ogni percentuale è calcolata automaticamente e pagata in tempo reale. Nessun trucco, solo risultati!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Slide 3 - Core Commission Premium -->
+        <div class="slide">
+            <h1 class="slide-title">Core Commission</h1>
+            <p class="slide-subtitle">28% di Guadagno Garantito - Dal Primo Giorno!</p>
+            
+            <div class="commission-grid">
+                <div class="commission-card">
+                    <h3>Vendite Personali</h3>
+                    <div class="percentage">23%</div>
+                    <p>Su ogni vendita diretta - Guadagno immediato!</p>
+                </div>
+                <div class="commission-card">
+                    <h3>Primo Livello</h3>
+                    <div class="percentage">5%</div>
+                    <p>Sulle vendite della tua squadra - Crescita automatica!</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue);">💰 Guadagno Immediato e Tangibile</h3>
+                <ul style="margin-left: 20px; font-size: 1.2rem;">
+                    <li>✅ Pagamenti settimanali garantiti</li>
+                    <li>✅ Nessun requisito di volume</li>
+                    <li>✅ Commissioni dal primo giorno</li>
+                    <li>✅ Supporto 24/7 incluso</li>
+                </ul>
+            </div>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">🎁 BONUS EXTRA: Chi si iscrive oggi riceve +2% sulle prime 10 vendite!</div>
+            </div>
+        </div>
+        
+        <!-- Slide 4 - Step Up Bonus Premium -->
+        <div class="slide">
+            <h1 class="slide-title">Step Up Bonus</h1>
+            <p class="slide-subtitle">10% di Bonus Progressivi - Cresci e Guadagna!</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Livello</th>
+                            <th>Volume Squadra/Mese</th>
+                            <th>Bonus Extra</th>
+                            <th>Guadagno Stimato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Starter</strong></td>
+                            <td>0 - 500 €</td>
+                            <td>0%</td>
+                            <td>~92 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Builder</strong></td>
+                            <td>501 - 2.000 €</td>
+                            <td>+2%</td>
+                            <td>~230 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leader</strong></td>
+                            <td>2.001 - 7.500 €</td>
+                            <td>+4%</td>
+                            <td>~1.200 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mentor</strong></td>
+                            <td>7.501 - 20.000 €</td>
+                            <td>+6%</td>
+                            <td>~2.600 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legend</strong></td>
+                            <td>20.001 €+</td>
+                            <td>+10%</td>
+                            <td>~6.500 €+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue);">📈 Sistema di Crescita Progressiva</h3>
+                <p>Più cresce la tua squadra, più aumentano i tuoi guadagni. Un sistema che premia la leadership e la crescita sostenibile.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 5 - Infinity Pool Premium -->
+        <div class="slide">
+            <h1 class="slide-title">Infinity Pool</h1>
+            <p class="slide-subtitle">5% del Fatturato Globale - Condivisione Infinita!</p>
+            
+            <div class="slide-content">
+                <div class="highlight-box">
+                    <h3 style="color: var(--primary-blue);">🌊 Condivisione Globale dei Profitti</h3>
+                    <p style="font-size: 1.3rem; margin-bottom: 20px;">Il 5% del fatturato globale viene condiviso tra gli ambassador che:</p>
+                    <ul style="margin-left: 20px; font-size: 1.2rem;">
+                        <li>✅ Hanno almeno 5 ambassador attivi</li>
+                        <li>✅ Generano 15.000 € di volume squadra/mese</li>
+                        <li>✅ Mantengono il livello per 2 mesi consecutivi</li>
+                    </ul>
+                </div>
+                
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <span class="icon rocket">👥</span>
+                        <h4>Team Attivo</h4>
+                        <p>5+ ambassador attivi</p>
+                    </div>
+                    <div class="icon-item">
+                        <span class="icon trophy">📊</span>
+                        <h4>Volume Squadra</h4>
+                        <p>15.000 €/mese</p>
+                    </div>
+                    <div class="icon-item">
+                        <span class="icon crown">⏰</span>
+                        <h4>Consistenza</h4>
+                        <p>2 mesi consecutivi</p>
+                    </div>
+                </div>
+                
+                <div class="urgency-banner">
+                    <div class="urgency-text">🌟 INFINITY POOL: Guadagni illimitati che crescono con la community!</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6 - Innovazioni Chiave Premium -->
+        <div class="slide">
+            <h1 class="slide-title">Innovazioni Chiave</h1>
+            <p class="slide-subtitle">Bonus Esclusivi e Riconoscimenti - Solo per i Primi!</p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <span class="icon rocket">🚀</span>
+                    <h4>Fast Start Bonus</h4>
+                    <p>+10% sulle vendite dirette nei primi 60 giorni</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon trophy">🏆</span>
+                    <h4>Matching Bonus</h4>
+                    <p>+2% sulle commissioni dei diretti dal livello Leader</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon crown">👑</span>
+                    <h4>Legend Club</h4>
+                    <p>Accesso a eventi VIP e bonus extra oltre i 50.000 € di volume squadra</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue);">💎 Vantaggi Esclusivi</h3>
+                <p>Questi bonus rendono Pentawash Revolution 4.3 il sistema più generoso e motivante nel settore MLM.</p>
+            </div>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">🎯 FAST START: Solo per i primi 100 iscritti di questo mese!</div>
+            </div>
+        </div>
+        
+        <!-- Slide 7 - Gamification Premium -->
+        <div class="slide">
+            <h1 class="slide-title">Gamification</h1>
+            <p class="slide-subtitle">Divertimento e Motivazione - Guadagna Giocando!</p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <span class="icon game">🎮</span>
+                    <h4>Pentagame Evoluto</h4>
+                    <p>Token e premi esclusivi per ogni obiettivo raggiunto</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon medal">🏅</span>
+                    <h4>Classifiche Mensili</h4>
+                    <p>Riconoscimenti pubblici per i migliori performer</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon target">🎯</span>
+                    <h4>Challenge Settimanali</h4>
+                    <p>Micro-incentivi per mantenere alta la motivazione della rete</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue);">🎉 La Differenza Pentawash</h3>
+                <p>Trasformiamo il lavoro di rete in un'esperienza coinvolgente e gratificante, dove ogni successo viene celebrato e premiato.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 8 - Simulazione Guadagni Premium -->
+        <div class="slide">
+            <h1 class="slide-title">Simulazione Guadagni</h1>
+            <p class="slide-subtitle">Proiezioni Realistiche e Trasparenti - I Numeri Parlano!</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Livello</th>
+                            <th>Guadagno Medio Mensile</th>
+                            <th>Caratteristiche</th>
+                            <th>Tempo Raggiungimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Base</strong></td>
+                            <td>~92 €</td>
+                            <td>Vendite personali + primo livello</td>
+                            <td>Immediato</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Builder</strong></td>
+                            <td>~230 €</td>
+                            <td>+ Step Up Bonus 2%</td>
+                            <td>1-2 mesi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mentor</strong></td>
+                            <td>~2.600 €</td>
+                            <td>+ Step Up Bonus 6% + Matching</td>
+                            <td>3-6 mesi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legend</strong></td>
+                            <td>~6.500 €+</td>
+                            <td>+ Step Up Bonus 10% + Infinity Pool</td>
+                            <td>6-12 mesi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: var(--primary-blue);">📈 Crescita Esponenziale</h3>
+                <p>I guadagni crescono in modo esponenziale con l'espansione della tua rete e il raggiungimento di livelli superiori.</p>
+            </div>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">💡 CONSIGLIO: Inizia oggi per massimizzare i tuoi guadagni nel 2024!</div>
+            </div>
+        </div>
+        
+        <!-- Slide 9 - Call to Action Premium -->
+        <div class="slide" id="cta">
+            <div class="cta-section">
+                <h2>Unisciti a Pentawash Revolution 4.3</h2>
+                <p>Trasforma il tuo impegno in un business reale e redditizio - ORA!</p>
+                <a href="#" class="btn-premium">🚀 INIZIA GRATIS ORA!</a>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h3 style="color: var(--primary-blue); text-align: center;">🌟 Perché Scegliere Pentawash Revolution 4.3?</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--secondary-blue); margin-bottom: 10px;">💼</div>
+                        <h4>Business Reale</h4>
+                        <p>Non solo vendite, ma costruzione di un impero</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--accent-aqua); margin-bottom: 10px;">🚀</div>
+                        <h4>Crescita Rapida</h4>
+                        <p>Sistema di bonus che accelera i guadagni</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--energy-orange); margin-bottom: 10px;">🎯</div>
+                        <h4>Supporto Completo</h4>
+                        <p>Training, materiali e assistenza dedicata</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="urgency-banner">
+                <div class="urgency-text">⏰ ATTENZIONE: Questa offerta scade tra 24 ore. Non perdere l'opportunità!</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const timeLeft = endOfDay - now;
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Scroll Animations
+        function checkScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        checkScroll();
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+            });
+        
+        // Add fade-in class to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.slide, .highlight-box, .commission-card, .icon-item');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
