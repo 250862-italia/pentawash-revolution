@@ -26,6 +26,10 @@
     {
       "source": "/premium",
       "destination": "/pentawash-revolution-premium.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/pentawash-revolution-premium-en.html"
     }
   ],
   "headers": [
