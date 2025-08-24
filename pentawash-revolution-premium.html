@@ -904,6 +904,11 @@
             color: var(--dark-text);
         }
 
+        .level-badge.iconic {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: var(--white);
+        }
+
         .volume-range {
             font-family: 'Roboto Mono', monospace;
             font-weight: 600;
@@ -2003,36 +2008,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="level-row starter">
-                                <td class="level-name">
-                                    <div class="level-badge starter">Starter</div>
-                                </td>
-                                <td class="volume-range">0 – 500 €</td>
-                                <td class="bonus-percentage">0%</td>
-                                <td class="level-description">Inizia qui e costruisci la tua base</td>
-                            </tr>
                             <tr class="level-row builder">
                                 <td class="level-name">
                                     <div class="level-badge builder">Builder</div>
                                 </td>
-                                <td class="volume-range">501 – 2.000 €</td>
-                                <td class="bonus-percentage">+2%</td>
+                                <td class="volume-range">0 – 1.000 €</td>
+                                <td class="bonus-percentage">+1%</td>
                                 <td class="level-description">Stai costruendo una squadra solida</td>
                             </tr>
                             <tr class="level-row leader">
                                 <td class="level-name">
                                     <div class="level-badge leader">Leader</div>
                                 </td>
-                                <td class="volume-range">2.001 – 7.500 €</td>
-                                <td class="bonus-percentage">+4%</td>
+                                <td class="volume-range">1.001 – 5.500 €</td>
+                                <td class="bonus-percentage">+2%</td>
                                 <td class="level-description">La tua squadra sta crescendo!</td>
                             </tr>
                             <tr class="level-row mentor">
                                 <td class="level-name">
                                     <div class="level-badge mentor">Mentor</div>
                                 </td>
-                                <td class="volume-range">7.501 – 20.000 €</td>
-                                <td class="bonus-percentage">+6%</td>
+                                <td class="volume-range">5.501 – 20.000 €</td>
+                                <td class="bonus-percentage">+3%</td>
                                 <td class="level-description">Sei un leader riconosciuto!</td>
                             </tr>
                             <tr class="level-row legend">
@@ -2040,8 +2037,16 @@
                                     <div class="level-badge legend">Legend</div>
                                 </td>
                                 <td class="volume-range">20.001 €+</td>
-                                <td class="bonus-percentage">+10%</td>
+                                <td class="bonus-percentage">+5%</td>
                                 <td class="level-description">Livello Elite - Hai raggiunto la leggenda!</td>
+                            </tr>
+                            <tr class="level-row iconic">
+                                <td class="level-name">
+                                    <div class="level-badge iconic">Iconic</div>
+                                </td>
+                                <td class="volume-range">50.000 €+</td>
+                                <td class="bonus-percentage">+8%</td>
+                                <td class="level-description">Livello Iconico - Sei un vero maestro del MLM!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -2217,9 +2222,9 @@
                         </div>
                         
                         <div class="result-card infinity">
-                            <div class="result-icon">🌊</div>
-                            <div class="result-title">Infinity Pool</div>
-                            <div class="result-value" id="infinityPool">€0</div>
+                            <div class="result-icon">🏆</div>
+                            <div class="result-title">Pentawash Elite Club</div>
+                            <div class="result-value" id="eliteClubBonus">€0</div>
                             <div class="result-detail">Condivisione globale</div>
                         </div>
                         
@@ -2246,7 +2251,7 @@
             <div class="cta-content" data-aos="fade-up">
                 <h2 class="cta-title">🚀 Pronto a Trasformare la Tua Vita?</h2>
                 <p class="cta-description">
-                    Unisciti a Pentawash Revolution 4.3 Elite e inizia a costruire il tuo impero finanziario oggi stesso!
+                    Unisciti a The Revolution 3.5.8 Elite e inizia a costruire il tuo impero finanziario oggi stesso!
                 </p>
                 
                 <div class="cta-highlights">
@@ -2413,49 +2418,49 @@
             
             // Step Up Bonus basato sul volume squadra
             let stepUpRate = 0;
-            let level = 'Starter';
-            let levelDescription = 'Inizia qui e cresci con la tua squadra!';
+            let level = 'Builder';
+            let levelDescription = 'Stai costruendo una squadra solida!';
             
-            if (teamVolume >= 5000) {
+            if (teamVolume >= 1000) {
+                stepUpRate = 0.01;
+                level = 'Builder';
+                levelDescription = 'Stai costruendo una squadra solida!';
+            }
+            if (teamVolume >= 5500) {
                 stepUpRate = 0.02;
                 level = 'Leader';
-                levelDescription = 'Ottimo! Stai costruendo una squadra solida!';
-            }
-            if (teamVolume >= 10000) {
-                stepUpRate = 0.04;
-                level = 'Manager';
                 levelDescription = 'Eccellente! La tua squadra sta crescendo!';
             }
-            if (teamVolume >= 15000) {
-                stepUpRate = 0.06;
-                level = 'Director';
+            if (teamVolume >= 20000) {
+                stepUpRate = 0.03;
+                level = 'Mentor';
                 levelDescription = 'Fantastico! Sei un leader riconosciuto!';
             }
-            if (teamVolume >= 20000) {
-                stepUpRate = 0.08;
-                level = 'Executive';
-                levelDescription = 'Incredibile! Sei al top del sistema!';
-            }
             if (teamVolume >= 25000) {
-                stepUpRate = 0.10;
-                level = 'Elite';
-                levelDescription = 'Leggendario! Hai raggiunto il livello Elite!';
+                stepUpRate = 0.05;
+                level = 'Legend';
+                levelDescription = 'Incredibile! Hai raggiunto il livello Elite!';
+            }
+            if (teamVolume >= 50000) {
+                stepUpRate = 0.08;
+                level = 'Iconic';
+                levelDescription = 'Leggendario! Sei un vero maestro del MLM!';
             }
             
             const stepUpBonus = teamVolume * stepUpRate;
             
-            // Infinity Pool (se requisiti soddisfatti)
-            let infinityPool = 0;
+            // Pentawash Elite Club (se requisiti soddisfatti)
+            let eliteClubBonus = 0;
             if (ambassadors >= 5 && teamVolume >= 15000) {
-                infinityPool = teamVolume * 0.05; // 5% del volume squadra
+                eliteClubBonus = teamVolume * 0.05; // 5% del volume squadra
             }
             
-            const totalMonthly = coreCommission + stepUpBonus + infinityPool;
+            const totalMonthly = coreCommission + stepUpBonus + eliteClubBonus;
             
             // Aggiorna risultati
             document.getElementById('coreCommission').textContent = `€${coreCommission.toFixed(0)}`;
             document.getElementById('stepUpBonus').textContent = `€${stepUpBonus.toFixed(0)}`;
-            document.getElementById('infinityPool').textContent = `€${infinityPool.toFixed(0)}`;
+            document.getElementById('eliteClubBonus').textContent = `€${eliteClubBonus.toFixed(0)}`;
             document.getElementById('totalMonthly').textContent = `€${totalMonthly.toFixed(0)}`;
             
             // Aggiorna livello
