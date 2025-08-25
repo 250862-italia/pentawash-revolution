@@ -2415,22 +2415,8 @@
                 Este sistema no nació por casualidad. Está inspirado en la secuencia de Fibonacci, la ley natural que regula el crecimiento armónico y progresivo que encuentras en flores, conchas marinas, incluso en galaxias.
             </p>
             <p class="hero-description">
-                Así como en la naturaleza cada elemento crece en equilibrio, nuestro plan de comisiones ha sido construido para crecer de manera sostenible y natural:
+                Así como en la naturaleza cada elemento crece en equilibrio, nuestro plan de comisiones ha sido construido para crecer de manera sostenible y natural.
             </p>
-            <div class="hero-benefits">
-                <div class="benefit-item">
-                    <i class="fas fa-seedling"></i>
-                    <span>Premios inmediatos para quienes comienzan.</span>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Crecimiento progresivo y predecible para quienes se comprometen.</span>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-crown"></i>
-                    <span>Recompensas extraordinarias para quienes alcanzan la cima.</span>
-                </div>
-            </div>
             <p class="hero-description">
                 <strong>The Revolution 3.5.8</strong> no es solo un plan de comisiones.
             </p>
@@ -3221,7 +3207,62 @@
             observer.observe(el);
         });
 
-        // Calcolatore Commissioni Premium
+        // Calcolatore Guadagni Premium
+        function calculateEarnings() {
+            const personalVolume = parseFloat(document.getElementById('personal-volume').value) || 0;
+            const teamVolume = parseFloat(document.getElementById('team-volume').value) || 0;
+            const teamMembers = parseInt(document.getElementById('team-members').value) || 0;
+
+            // Core Commission - 28% del volume personale
+            const coreCommission = personalVolume * 0.28;
+            
+            // Step Up Bonus basato sul volume squadra mensile
+            let stepUpRate = 0;
+            let level = 'Starter';
+            
+            if (teamVolume >= 1001 && teamVolume <= 2000) {
+                stepUpRate = 0.01; // 1% (F1)
+                level = 'Builder';
+            } else if (teamVolume >= 2001 && teamVolume <= 7500) {
+                stepUpRate = 0.02; // 2% (F2)
+                level = 'Leader';
+            } else if (teamVolume >= 7501 && teamVolume <= 20000) {
+                stepUpRate = 0.03; // 3% (F3)
+                level = 'Mentor';
+            } else if (teamVolume >= 20001 && teamVolume < 50000) {
+                stepUpRate = 0.05; // 5% (F5)
+                level = 'Legend';
+            } else if (teamVolume >= 50000) {
+                stepUpRate = 0.08; // 8% (F8)
+                level = 'Iconic';
+            }
+            
+            const stepUpBonus = teamVolume * stepUpRate;
+            
+            // Infinity Pool Bonus - 5% del fatturato globale (se livello Legend o Iconic)
+            let infinityPoolBonus = 0;
+            if (level === 'Legend' || level === 'Iconic') {
+                // Simuliamo un fatturato globale di €1M per il calcolo
+                const globalRevenue = 1000000;
+                infinityPoolBonus = globalRevenue * 0.05;
+            }
+            
+            const totalEarnings = coreCommission + stepUpBonus + infinityPoolBonus;
+            
+            // Aggiorna risultati
+            document.getElementById('core-commission').textContent = `€${coreCommission.toFixed(0)}`;
+            document.getElementById('step-up-bonus').textContent = `€${stepUpBonus.toFixed(0)}`;
+            document.getElementById('infinity-pool-bonus').textContent = `€${infinityPoolBonus.toFixed(0)}`;
+            document.getElementById('total-earnings').textContent = `€${totalEarnings.toFixed(0)}`;
+            
+            // Aggiorna livello
+            document.getElementById('current-level').textContent = level;
+            
+            // Animazione risultati
+            animateResults();
+        }
+
+        // Calcolatore Commissioni Premium (mantenuto per compatibilità)
         function calculateCommissions() {
             const personalSales = parseFloat(document.getElementById('personalSales').value) || 0;
             const teamVolume = parseFloat(document.getElementById('teamVolume').value) || 0;
@@ -3307,7 +3348,12 @@
             
             input.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
-                    calculateCommissions();
+                    // Determina quale funzione chiamare in base al contesto
+                    if (document.getElementById('personal-volume')) {
+                        calculateEarnings();
+                    } else if (document.getElementById('personalSales')) {
+                        calculateCommissions();
+                    }
                 }
             });
         });
