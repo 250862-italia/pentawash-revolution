@@ -241,64 +241,10 @@
             animation: slideInUp 1s ease-out 0.4s both;
         }
 
-        .hero-benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
-            animation: slideInUp 1s ease-out 0.6s both;
-        }
 
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition-smooth);
-        }
-
-        .benefit-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(10px);
-        }
-
-        .benefit-item i {
-            color: var(--energy-orange);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .benefit-item span {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
 
         /* Responsive per Mobile */
         @media (max-width: 768px) {
-            .hero-benefits {
-                margin: 1.5rem 0;
-                gap: 0.8rem;
-            }
-
-            .benefit-item {
-                padding: 0.8rem 1rem;
-                background: rgba(255, 255, 255, 0.2);
-                border: 2px solid rgba(255, 255, 255, 0.3);
-            }
-
-            .benefit-item i {
-                font-size: 1rem;
-            }
-
-            .benefit-item span {
-                font-size: 1rem;
-                text-align: left;
-            }
-
             .hero-content {
                 padding: 1rem;
             }
@@ -306,18 +252,6 @@
             .hero-title {
                 margin-top: 4rem;
                 font-size: clamp(2.5rem, 6vw, 4rem);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .benefit-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-
-            .benefit-item span {
-                text-align: center;
             }
         }
 
@@ -2415,22 +2349,8 @@
                 Dieses System wurde nicht zufällig geboren. Es ist inspiriert von der Fibonacci-Sequenz, dem Naturgesetz, das harmonisches und progressives Wachstum reguliert, das man in Blumen, Muscheln und sogar Galaxien findet.
             </p>
             <p class="hero-description">
-                Genau wie in der Natur jedes Element im Gleichgewicht wächst, wurde unser Kommissionsplan so konstruiert, dass er auf nachhaltige und natürliche Weise wächst:
+                Genau wie in der Natur jedes Element im Gleichgewicht wächst, wurde unser Kommissionsplan so konstruiert, dass er auf nachhaltige und natürliche Weise wächst.
             </p>
-            <div class="hero-benefits">
-                <div class="benefit-item">
-                    <i class="fas fa-seedling"></i>
-                    <span>Sofortige Belohnungen für diejenigen, die anfangen.</span>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Fortschrittliches und vorhersehbares Wachstum für diejenigen, die sich engagieren.</span>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-crown"></i>
-                    <span>Außergewöhnliche Belohnungen für diejenigen, die die Spitze erreichen.</span>
-                </div>
-            </div>
             <p class="hero-description">
                 <strong>The Revolution 3.5.8</strong> ist nicht nur ein Kommissionsplan.
             </p>
