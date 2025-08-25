@@ -12,6 +12,22 @@
       "destination": "/pentawash-revolution-premium.html"
     },
     {
+      "source": "/it",
+      "destination": "/pentawash-revolution-premium.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/pentawash-revolution-premium-en.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/pentawash-revolution-premium-es.html"
+    },
+    {
+      "source": "/de",
+      "destination": "/pentawash-revolution-premium-de.html"
+    },
+    {
       "source": "/mlm-premium",
       "destination": "/pentawash-mlm-premium.html"
     },
@@ -26,14 +42,6 @@
     {
       "source": "/premium",
       "destination": "/pentawash-revolution-premium.html"
-    },
-    {
-      "source": "/en",
-      "destination": "/pentawash-revolution-premium-en.html"
-    },
-    {
-      "source": "/de",
-      "destination": "/pentawash-revolution-premium-de.html"
     }
   ],
 

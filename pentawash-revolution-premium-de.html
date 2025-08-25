@@ -143,6 +143,48 @@
             background: rgba(77, 166, 255, 0.1);
         }
 
+        /* Language Selector */
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-link {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: var(--transition-fast);
+            border: 1px solid transparent;
+        }
+
+        .lang-link:hover {
+            color: var(--primary-blue);
+            background: rgba(77, 166, 255, 0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .lang-link.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        /* Responsive per Language Selector */
+        @media (max-width: 768px) {
+            .language-selector {
+                gap: 0.3rem;
+            }
+            
+            .lang-link {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+
         /* Hero Section Premium */
         .hero {
             min-height: 100vh;
@@ -2120,9 +2162,18 @@
 
     <!-- Header Premium -->
     <header class="header" id="header">
-        <nav class="nav-container">
+                <nav class="nav-container">
             <div class="logo">The Revolution 3.5.8 Elite</div>
-                        <ul class="nav-menu">
+            
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <a href="/" class="lang-link">🇮🇹 IT</a>
+                <a href="/en" class="lang-link">🇬🇧 EN</a>
+                <a href="/es" class="lang-link">🇪🇸 ES</a>
+                <a href="/de" class="lang-link active">🇩🇪 DE</a>
+            </div>
+            
+            <ul class="nav-menu">
                 <li class="nav-item"><a href="#hero" class="nav-link">Startseite</a></li>
                 <li class="nav-item"><a href="#perfect-system" class="nav-link">System</a></li>
                 <li class="nav-item"><a href="#features" class="nav-link">Funktionen</a></li>
